@@ -1,38 +1,22 @@
 (() => {
-  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
-  const fmt = n => n >= 1e6 ? (n/1e6).toFixed(1)+'M' : n >= 1e3 ? (n/1e3).toFixed(n>=1e5?0:1)+'k' : String(n || 0);
-  const score = r => {
-    const age = Math.max(1, (Date.now() - new Date(r.created_at || Date.now())) / 864e5);
-    const activity = Math.max(0, 1 - Math.min(1, (Date.now() - new Date(r.pushed_at || Date.now())) / (180 * 864e5)));
-    const maturity = Math.min(1, Math.log10(1 + Number(r.stargazers_count||0)) / 5);
-    const community = Math.min(1, Math.log10(1 + Number(r.forks_count||0)) / 4);
-    const attention = Math.min(1, Math.log10(1 + Number(r.watchers_count||0)) / 4);
-    const documentation = r.description && (r.topics?.length || r.language) ? 1 : r.description ? .65 : .3;
-    return Math.round((maturity*.30 + community*.20 + attention*.10 + activity*.25 + documentation*.15) * 100);
-  };
-  function renderUseful(){
-    const raw = localStorage.getItem('open-source-explorer-v2');
-    if(!raw) return;
-    let data; try { data = JSON.parse(raw); } catch { return; }
-    const repos = (data.items || []).slice().sort((a,b) => score(b)-score(a)).slice(0,4);
-    if(!repos.length) return;
-    const grid = document.querySelector('.signal-grid');
-    if(!grid || document.getElementById('usefulSignal')) return;
-    const card = document.createElement('article');
-    card.className='signal-card'; card.id='usefulSignal';
-    card.innerHTML=`<div class="signal-title"><span>✦</span><div><b>Most useful</b><small>Composite usefulness score</small></div></div><div class="mini-list">${repos.map((r,i)=>`<a class="mini-item" href="${esc(r.html_url)}" target="_blank" rel="noopener"><span class="rank">0${i+1}</span><img class="mini-avatar" src="${esc(r.owner?.avatar_url||'')}" loading="lazy" alt=""><div><b>${esc(r.full_name)}</b><span>Usefulness ${score(r)} · ★ ${fmt(r.stargazers_count)}</span></div></a>`).join('')}</div>`;
-    grid.appendChild(card);
-  }
-  const theme = document.createElement('style');
-  theme.textContent = `
-    .light{--bg:#f5f7fb;--panel:#fff;--panel2:#eef1f7;--text:#11131a;--muted:#667085;--line:rgba(17,19,26,.10);--shadow:0 24px 70px rgba(31,41,55,.12)}
-    .light body{background:radial-gradient(circle at 50% -10%,rgba(124,92,255,.10),transparent 35%),var(--bg);color:var(--text)}
-    .light .hero-search,.light .repo-card,.light .signal-card,.light .platform-card,.light .cat{background:rgba(255,255,255,.72)}
-    .light .hero-search input{color:#11131a}.light .view-actions select{background:#fff;color:#4b5563}
-    .light .float{background:#fff;box-shadow:0 15px 30px rgba(0,0,0,.08)}
-    .light .repo-modal{background:rgba(235,238,245,.78)}.light .repo-sheet{background:#fff;color:#11131a}
-  `;
-  document.head.appendChild(theme);
-  window.setTimeout(renderUseful, 500);
-  window.addEventListener('storage', renderUseful);
+  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+  const fmt=n=>n>=1e6?(n/1e6).toFixed(1)+'M':n>=1e3?(n/1e3).toFixed(n>=1e5?0:1)+'k':String(n||0);
+  const score=r=>{const activity=Math.max(0,1-Math.min(1,(Date.now()-new Date(r.pushed_at||Date.now()))/(180*864e5)));const maturity=Math.min(1,Math.log10(1+Number(r.stargazers_count||0))/5);const community=Math.min(1,Math.log10(1+Number(r.forks_count||0))/4);const attention=Math.min(1,Math.log10(1+Number(r.watchers_count||0))/4);const documentation=r.description&&(r.topics?.length||r.language)?1:r.description?.65:.3;return Math.round((maturity*.3+community*.2+attention*.1+activity*.25+documentation*.15)*100)};
+  const get=(key)=>{try{return JSON.parse(localStorage.getItem(key)||'[]')}catch{return[]}};
+  const set=(key,v)=>localStorage.setItem(key,JSON.stringify(v));
+  const repos=()=>{try{return JSON.parse(localStorage.getItem('open-source-explorer-v2')||'{}').items||[]}catch{return[]}};
+  const find=id=>repos().find(r=>String(r.id)===String(id));
+  const refreshCards=()=>{document.querySelectorAll('[data-repo-id]').forEach(c=>{const id=c.dataset.repoId,r=find(id),saved=get('os-saved').includes(Number(id)),comp=get('os-compare').includes(Number(id));if(!r)return;const s=c.querySelector('[data-save]'),x=c.querySelector('[data-compare]');if(s){s.classList.toggle('active',saved);s.innerHTML=saved?'♥ Save':'♡ Save'}if(x){x.classList.toggle('active',comp);x.innerHTML=comp?'✓ Compare':'＋ Compare'}});renderBar()};
+  const style=document.createElement('style');style.textContent=`
+    .repo-actions{display:flex;gap:8px;margin-top:14px}.repo-actions button{border:1px solid var(--line);background:rgba(255,255,255,.035);color:var(--muted);border-radius:10px;padding:8px 11px;font:600 12px Inter;cursor:pointer;transition:.2s}.repo-actions button:hover,.repo-actions button.active{color:var(--text);border-color:rgba(124,92,255,.55);background:rgba(124,92,255,.12)}
+    .compare-bar{position:fixed;z-index:80;left:50%;bottom:20px;transform:translate(-50%,20px);opacity:0;pointer-events:none;width:min(760px,calc(100% - 24px));display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:18px;background:rgba(12,13,18,.88);backdrop-filter:blur(24px);box-shadow:0 20px 70px rgba(0,0,0,.35);transition:.25s}.compare-bar.show{opacity:1;transform:translate(-50%,0);pointer-events:auto}.compare-bar .compare-count{flex:1;color:var(--muted);font-size:13px}.compare-bar button{border:0;border-radius:11px;padding:9px 13px;background:rgba(255,255,255,.08);color:var(--text);font-weight:700;cursor:pointer}.compare-bar .primary{background:#7c5cff;color:white}.compare-modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(2,3,7,.72);backdrop-filter:blur(12px)}.compare-modal.open{display:flex}.compare-sheet{width:min(1100px,100%);max-height:90vh;overflow:auto;background:var(--panel,#111217);border:1px solid var(--line);border-radius:24px;box-shadow:0 30px 100px rgba(0,0,0,.5);padding:24px}.compare-head{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:20px}.compare-head h3{margin:0;font:700 24px 'Space Grotesk',Inter}.compare-close{border:0;background:var(--panel2);color:var(--text);border-radius:10px;padding:9px 12px;cursor:pointer}.compare-table{display:grid;grid-template-columns:150px repeat(var(--cols),minmax(170px,1fr));min-width:650px}.compare-cell{padding:13px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);font-size:13px}.compare-label{color:var(--muted);font-weight:700}.compare-name{font-weight:800;color:var(--text);font-size:15px}.compare-value{color:var(--text)}@media(max-width:700px){.compare-sheet{padding:16px;border-radius:18px}.compare-table{grid-template-columns:105px repeat(var(--cols),150px)}}
+    .light .compare-bar{background:rgba(255,255,255,.9)}.light .compare-modal{background:rgba(230,233,241,.75)}.light .compare-sheet{background:#fff;color:#11131a}
+  `;document.head.appendChild(style);
+  const bar=document.createElement('div');bar.className='compare-bar';bar.id='compareBar';bar.innerHTML='<span class="compare-count">0 repositories selected</span><button data-clear-compare>Clear</button><button class="primary" data-open-compare>Compare</button>';document.body.appendChild(bar);
+  const modal=document.createElement('div');modal.className='compare-modal';modal.id='compareModal';modal.innerHTML='<div class="compare-sheet"><div class="compare-head"><h3>Repository comparison</h3><button class="compare-close" data-close-compare>Close</button></div><div id="compareContent"></div></div>';document.body.appendChild(modal);
+  function renderBar(){const n=get('os-compare').length;bar.classList.toggle('show',n>0);bar.querySelector('.compare-count').textContent=`${n} ${n===1?'repository':'repositories'} selected · choose up to 4`;bar.querySelector('[data-open-compare]').disabled=n<2}
+  function openCompare(){const selected=get('os-compare').slice(0,4).map(find).filter(Boolean);if(selected.length<2){alert('Select at least 2 repositories to compare.');return}const rows=[['Stars',r=>fmt(r.stargazers_count)],['Forks',r=>fmt(r.forks_count)],['Watchers',r=>fmt(r.watchers_count)],['Language',r=>r.language||'—'],['License',r=>r.license?.spdx_id||r.license?.name||'—'],['Platform',r=>r._platform||'Cross-platform'],['Category',r=>r._category||'Utilities'],['Created',r=>new Date(r.created_at).getFullYear()],['Last updated',r=>new Date(r.pushed_at).toLocaleDateString()],['Usefulness',r=>score(r)+'/100']];let html=`<div class="compare-table" style="--cols:${selected.length}"><div class="compare-cell compare-label">Repository</div>${selected.map(r=>`<div class="compare-cell"><a class="compare-name" href="${esc(r.html_url)}" target="_blank" rel="noopener">${esc(r.full_name)}</a></div>`).join('')}`;rows.forEach(([label,fn])=>html+=`<div class="compare-cell compare-label">${label}</div>${selected.map(r=>`<div class="compare-cell compare-value">${esc(fn(r))}</div>`).join('')}`);html+='</div>';document.querySelector('#compareContent').innerHTML=html;modal.classList.add('open');document.body.style.overflow='hidden'}
+  document.addEventListener('click',e=>{const save=e.target.closest('[data-save]'),cmp=e.target.closest('[data-compare]');if(save){const id=Number(save.dataset.save),a=get('os-saved'),i=a.indexOf(id);i>=0?a.splice(i,1):a.push(id);set('os-saved',a);refreshCards()}if(cmp){const id=Number(cmp.dataset.compare),a=get('os-compare'),i=a.indexOf(id);if(i>=0)a.splice(i,1);else{if(a.length>=4){alert('Compare is limited to 4 repositories.');return}a.push(id)}set('os-compare',a);refreshCards()}if(e.target.closest('[data-open-compare]'))openCompare();if(e.target.closest('[data-clear-compare]')){set('os-compare',[]);refreshCards()}if(e.target.closest('[data-close-compare]')||e.target===modal){modal.classList.remove('open');document.body.style.overflow=''}});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'){modal.classList.remove('open');document.body.style.overflow=''}});
+  window.setTimeout(()=>{renderBar();refreshCards()},700);window.addEventListener('storage',refreshCards);
 })();
