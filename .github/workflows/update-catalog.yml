@@ -4,8 +4,6 @@ on:
   schedule:
     - cron: '17 */6 * * *'
   workflow_dispatch:
-  push:
-    branches: [main]
 
 permissions:
   contents: write
@@ -41,8 +39,7 @@ jobs:
           )
           for q in "${queries[@]}"; do
             encoded=$(python3 -c 'import urllib.parse,sys; print(urllib.parse.quote(sys.argv[1]))' "$q")
-            curl -fsSL -H "Accept: application/vnd.github+json" -H "Authorization: Bearer $GH_TOKEN" "https://api.github.com/search/repositories?q=$encoded&sort=stars&order=desc&per_page=50" \
-              | jq '.items' > /tmp/current.json
+            curl -fsSL -H "Accept: application/vnd.github+json" -H "Authorization: Bearer $GH_TOKEN" "https://api.github.com/search/repositories?q=$encoded&sort=stars&order=desc&per_page=50" | jq '.items' > /tmp/current.json
             jq -s '.[0] + .[1]' /tmp/repos.json /tmp/current.json > /tmp/merged.json
             mv /tmp/merged.json /tmp/repos.json
           done
