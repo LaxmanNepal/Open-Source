@@ -1,0 +1,65 @@
+name: Update Open Source Catalog
+
+on:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  update-catalog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build catalog from GitHub Search API
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p data
+          echo '[]' > /tmp/repos.json
+          queries=(
+            'AI machine learning stars:>100 archived:false'
+            'video editor ffmpeg stars:>50 archived:false'
+            'developer tools IDE code stars:>100 archived:false'
+            'productivity notes workflow stars:>100 archived:false'
+            'design graphics creative stars:>100 archived:false'
+            'security privacy cybersecurity stars:>100 archived:false'
+            'music audio media player stars:>100 archived:false'
+            'utility tools desktop apps stars:>100 archived:false'
+            'android open source app stars:>100 archived:false'
+            'macos open source app stars:>100 archived:false'
+            'windows open source app stars:>100 archived:false'
+            'linux open source app stars:>100 archived:false'
+          )
+          for q in "${queries[@]}"; do
+            encoded=$(python3 -c 'import urllib.parse,sys; print(urllib.parse.quote(sys.argv[1]))' "$q")
+            curl -fsSL -H "Accept: application/vnd.github+json" -H "Authorization: Bearer $GH_TOKEN" "https://api.github.com/search/repositories?q=$encoded&sort=stars&order=desc&per_page=50" \
+              | jq '.items' > /tmp/current.json
+            jq -s '.[0] + .[1]' /tmp/repos.json /tmp/current.json > /tmp/merged.json
+            mv /tmp/merged.json /tmp/repos.json
+          done
+          jq 'unique_by(.id) | map({id,name,full_name,html_url,description,topics,language,stargazers_count,forks_count,watchers_count,created_at,updated_at,pushed_at,owner:{login:.owner.login,avatar_url:.owner.avatar_url}})' /tmp/repos.json > data/catalog.json
+          python3 - <<'PY'
+          import json, datetime
+          p='data/catalog.json'
+          data=json.load(open(p))
+          years=sorted({x['created_at'][:4] for x in data}, reverse=True)
+          meta={'generated_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'repository_count':len(data),'years':years,'source':'GitHub public repository search'}
+          json.dump({'meta':meta,'repositories':data},open(p,'w'),ensure_ascii=False,separators=(',',':'))
+          PY
+
+      - name: Commit catalog
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/catalog.json
+          git diff --cached --quiet || git commit -m "chore: refresh open source catalog"
+          git push
