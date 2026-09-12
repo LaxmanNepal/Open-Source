@@ -15,7 +15,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build catalog from GitHub Search API
+      - name: Build broad catalog from GitHub Search API
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
@@ -24,22 +24,30 @@ jobs:
           mkdir -p data
           echo '[]' > /tmp/repos.json
           queries=(
-            'AI machine learning stars:>100 archived:false'
-            'video editor ffmpeg stars:>50 archived:false'
-            'developer tools IDE code stars:>100 archived:false'
-            'productivity notes workflow stars:>100 archived:false'
-            'design graphics creative stars:>100 archived:false'
-            'security privacy cybersecurity stars:>100 archived:false'
-            'music audio media player stars:>100 archived:false'
-            'utility tools desktop apps stars:>100 archived:false'
-            'android open source app stars:>100 archived:false'
-            'macos open source app stars:>100 archived:false'
-            'windows open source app stars:>100 archived:false'
-            'linux open source app stars:>100 archived:false'
+            'AI machine learning LLM stars:>100 archived:false'
+            'generative AI image generation diffusion stars:>100 archived:false'
+            'AI speech audio TTS music stars:>100 archived:false'
+            'video editor FFmpeg recording streaming stars:>50 archived:false'
+            '3D modeling animation graphics CAD stars:>100 archived:false'
+            'game engine game development stars:>100 archived:false'
+            'developer tools IDE code editor terminal CLI stars:>100 archived:false'
+            'programming framework compiler language stars:>100 archived:false'
+            'productivity notes tasks calendar workflow stars:>100 archived:false'
+            'design creative drawing painting graphics stars:>100 archived:false'
+            'security privacy password encryption stars:>100 archived:false'
+            'browser privacy web desktop stars:>100 archived:false'
+            'media server streaming movies music stars:>100 archived:false'
+            'self hosted cloud storage backup stars:>100 archived:false'
+            'android open source app Kotlin stars:>100 archived:false'
+            'ios open source app Swift stars:>100 archived:false'
+            'macos open source app Swift desktop stars:>100 archived:false'
+            'windows open source app desktop PowerShell stars:>100 archived:false'
+            'linux open source desktop Wayland GTK KDE stars:>100 archived:false'
+            'cross platform open source desktop app stars:>100 archived:false'
           )
           for q in "${queries[@]}"; do
             encoded=$(python3 -c 'import urllib.parse,sys; print(urllib.parse.quote(sys.argv[1]))' "$q")
-            curl -fsSL -H "Accept: application/vnd.github+json" -H "Authorization: Bearer $GH_TOKEN" "https://api.github.com/search/repositories?q=$encoded&sort=stars&order=desc&per_page=50" | jq '.items' > /tmp/current.json
+            curl -fsSL --retry 3 --retry-delay 2 -H "Accept: application/vnd.github+json" -H "Authorization: Bearer $GH_TOKEN" "https://api.github.com/search/repositories?q=$encoded&sort=stars&order=desc&per_page=50" | jq '.items' > /tmp/current.json
             jq -s '.[0] + .[1]' /tmp/repos.json /tmp/current.json > /tmp/merged.json
             mv /tmp/merged.json /tmp/repos.json
           done
@@ -48,8 +56,14 @@ jobs:
           import json, datetime
           p='data/catalog.json'
           data=json.load(open(p))
-          years=sorted({x['created_at'][:4] for x in data}, reverse=True)
-          meta={'generated_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'repository_count':len(data),'years':years,'source':'GitHub public repository search'}
+          years=sorted({x['created_at'][:4] for x in data if x.get('created_at')}, reverse=True)
+          meta={
+            'generated_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),
+            'repository_count':len(data),
+            'years':years,
+            'source':'GitHub public repository search',
+            'query_count':20
+          }
           json.dump({'meta':meta,'repositories':data},open(p,'w'),ensure_ascii=False,separators=(',',':'))
           PY
 
@@ -58,5 +72,5 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add data/catalog.json
-          git diff --cached --quiet || git commit -m "chore: refresh open source catalog"
+          git diff --cached --quiet || git commit -m "chore: refresh broad open source catalog"
           git push
