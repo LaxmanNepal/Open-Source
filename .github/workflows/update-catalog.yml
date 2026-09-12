@@ -15,7 +15,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build broad catalog from GitHub Search API
+      - name: Build broad 1000-repository catalog from GitHub Search API
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
@@ -26,7 +26,7 @@ jobs:
           queries=(
             'AI machine learning LLM stars:>100 archived:false'
             'generative AI image generation diffusion stars:>100 archived:false'
-            'AI speech audio TTS music stars:>100 archived:false'
+            'AI speech audio TTS music stars:>50 archived:false'
             'video editor FFmpeg recording streaming stars:>50 archived:false'
             '3D modeling animation graphics CAD stars:>100 archived:false'
             'game engine game development stars:>100 archived:false'
@@ -38,31 +38,36 @@ jobs:
             'browser privacy web desktop stars:>100 archived:false'
             'media server streaming movies music stars:>100 archived:false'
             'self hosted cloud storage backup stars:>100 archived:false'
-            'android open source app Kotlin stars:>100 archived:false'
-            'ios open source app Swift stars:>100 archived:false'
-            'macos open source app Swift desktop stars:>100 archived:false'
-            'windows open source app desktop PowerShell stars:>100 archived:false'
-            'linux open source desktop Wayland GTK KDE stars:>100 archived:false'
-            'cross platform open source desktop app stars:>100 archived:false'
+            'android open source app Kotlin stars:>50 archived:false'
+            'ios open source app Swift stars:>50 archived:false'
+            'macos open source app Swift desktop stars:>50 archived:false'
+            'windows open source app desktop PowerShell stars:>50 archived:false'
+            'linux open source desktop Wayland GTK KDE stars:>50 archived:false'
+            'cross platform open source desktop app stars:>50 archived:false'
           )
           for q in "${queries[@]}"; do
             encoded=$(python3 -c 'import urllib.parse,sys; print(urllib.parse.quote(sys.argv[1]))' "$q")
             curl -fsSL --retry 3 --retry-delay 2 -H "Accept: application/vnd.github+json" -H "Authorization: Bearer $GH_TOKEN" "https://api.github.com/search/repositories?q=$encoded&sort=stars&order=desc&per_page=50" | jq '.items' > /tmp/current.json
             jq -s '.[0] + .[1]' /tmp/repos.json /tmp/current.json > /tmp/merged.json
             mv /tmp/merged.json /tmp/repos.json
+            sleep 0.3
           done
-          jq 'unique_by(.id) | map({id,name,full_name,html_url,description,topics,language,stargazers_count,forks_count,watchers_count,created_at,updated_at,pushed_at,owner:{login:.owner.login,avatar_url:.owner.avatar_url}})' /tmp/repos.json > data/catalog.json
+          jq 'unique_by(.id) | map({id,name,full_name,html_url,description,topics,language,license,stargazers_count,forks_count,watchers_count,open_issues_count,size,created_at,updated_at,pushed_at,owner:{login:.owner.login,avatar_url:.owner.avatar_url}})' /tmp/repos.json > data/catalog.json
           python3 - <<'PY'
           import json, datetime
           p='data/catalog.json'
           data=json.load(open(p))
           years=sorted({x['created_at'][:4] for x in data if x.get('created_at')}, reverse=True)
+          languages=sorted({x.get('language') for x in data if x.get('language')}, key=str.lower)
+          licenses=sorted({(x.get('license') or {}).get('spdx_id') for x in data if (x.get('license') or {}).get('spdx_id')}, key=str.lower)
           meta={
             'generated_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),
             'repository_count':len(data),
             'years':years,
+            'languages':languages,
+            'licenses':licenses,
             'source':'GitHub public repository search',
-            'query_count':20
+            'query_count':len(queries)
           }
           json.dump({'meta':meta,'repositories':data},open(p,'w'),ensure_ascii=False,separators=(',',':'))
           PY
@@ -72,5 +77,5 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add data/catalog.json
-          git diff --cached --quiet || git commit -m "chore: refresh broad open source catalog"
+          git diff --cached --quiet || git commit -m "chore: refresh 1000-repository discovery catalog"
           git push
