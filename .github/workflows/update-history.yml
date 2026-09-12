@@ -1,0 +1,61 @@
+name: Build Open Source Trends
+
+on:
+  schedule:
+    - cron: '37 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  trends:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Snapshot current catalog and calculate trends
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p data/history
+          if [ ! -f data/catalog.json ]; then
+            echo 'catalog.json is missing; skipping.'
+            exit 0
+          fi
+          today=$(date -u +%F)
+          jq '{date:"'"$today"'",repositories:[.repositories[]|{id,full_name,stargazers_count,forks_count,watchers_count,pushed_at}]}' data/catalog.json > "data/history/$today.json"
+          ls -1 data/history/*.json 2>/dev/null | sort | head -n -31 | xargs -r rm -f
+          python3 - <<'PY'
+          import json, glob, os, datetime
+          files=sorted(glob.glob('data/history/*.json'))[-31:]
+          snaps=[]
+          for f in files:
+              try: snaps.append(json.load(open(f)))
+              except Exception: pass
+          current=snaps[-1] if snaps else {'date':datetime.date.today().isoformat(),'repositories':[]}
+          def index(s): return {str(x['id']):x for x in s.get('repositories',[])}
+          ci=index(current); prev=index(snaps[-2]) if len(snaps)>1 else {}
+          week=index(snaps[-8]) if len(snaps)>7 else (index(snaps[0]) if snaps else {})
+          month=index(snaps[0]) if snaps else {}
+          rows=[]
+          for rid,r in ci.items():
+              def delta(base,key): return int(r.get(key,0) or 0)-int(base.get(rid,{}).get(key,0) or 0)
+              ds=delta(prev,'stargazers_count'); df=delta(prev,'forks_count'); dw=delta(prev,'watchers_count')
+              s7=delta(week,'stargazers_count'); f7=delta(week,'forks_count'); w7=delta(week,'watchers_count')
+              sm=delta(month,'stargazers_count'); fm=delta(month,'forks_count'); wm=delta(month,'watchers_count')
+              age=max(1,(datetime.datetime.now(datetime.timezone.utc)-datetime.datetime.fromisoformat(r['pushed_at'].replace('Z','+00:00'))).total_seconds()/86400)
+              trend=max(0,s7)*1.0+max(0,f7)*2.0+max(0,w7)*0.5+max(0,ds)*0.25
+              rows.append({'id':r['id'],'full_name':r['full_name'],'stars':r.get('stargazers_count',0),'forks':r.get('forks_count',0),'watchers':r.get('watchers_count',0),'star_delta':ds,'fork_delta':df,'watcher_delta':dw,'stars_7d':s7,'forks_7d':f7,'watchers_7d':w7,'stars_30d':sm,'forks_30d':fm,'watchers_30d':wm,'trend_score':round(trend,2),'pushed_at':r.get('pushed_at'),'activity_days':round(age,1)})
+          rows.sort(key=lambda x:(x['trend_score'],x['stars_7d']),reverse=True)
+          out={'generated_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'snapshot_count':len(snaps),'snapshots':[s.get('date') for s in snaps],'trending':rows[:100],'rising':[x for x in rows if x['stars_7d']>0][:30],'new_promising':[x for x in rows if x['stars']<5000 and x['stars_7d']>=1][:30]}
+          json.dump(out,open('data/trending.json','w'),ensure_ascii=False,separators=(',',':'))
+          PY
+
+      - name: Commit trend data
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/history data/trending.json
+          git diff --cached --quiet || git commit -m 'chore: refresh open source trends'
+          git push
