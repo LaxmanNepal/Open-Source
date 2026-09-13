@@ -4,7 +4,7 @@
   const score=r=>{const activity=Math.max(0,1-Math.min(1,(Date.now()-new Date(r.pushed_at||Date.now()))/(180*864e5)));const maturity=Math.min(1,Math.log10(1+Number(r.stargazers_count||0))/5);const community=Math.min(1,Math.log10(1+Number(r.forks_count||0))/4);const attention=Math.min(1,Math.log10(1+Number(r.watchers_count||0))/4);const documentation=r.description&&(r.topics?.length||r.language)?1:r.description?.65:.3;return Math.round((maturity*.3+community*.2+attention*.1+activity*.25+documentation*.15)*100)};
   const get=(key)=>{try{return JSON.parse(localStorage.getItem(key)||'[]')}catch{return[]}};
   const set=(key,v)=>localStorage.setItem(key,JSON.stringify(v));
-  const repos=()=>{try{return JSON.parse(localStorage.getItem('open-source-explorer-v2')||'{}').items||[]}catch{return[]}};
+  const repos=()=>{try{return JSON.parse(localStorage.getItem('open-source-explorer-v4')||'{}').items||[]}catch{return[]}};
   const find=id=>repos().find(r=>String(r.id)===String(id));
   const refreshCards=()=>{document.querySelectorAll('[data-repo-id]').forEach(c=>{const id=c.dataset.repoId,r=find(id),saved=get('os-saved').includes(Number(id)),comp=get('os-compare').includes(Number(id));if(!r)return;const s=c.querySelector('[data-save]'),x=c.querySelector('[data-compare]');if(s){s.classList.toggle('active',saved);s.innerHTML=saved?'♥ Save':'♡ Save'}if(x){x.classList.toggle('active',comp);x.innerHTML=comp?'✓ Compare':'＋ Compare'}});renderBar()};
   const style=document.createElement('style');style.textContent=`
