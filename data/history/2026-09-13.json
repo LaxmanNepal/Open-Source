@@ -1,0 +1,197 @@
+{
+  "date": "2026-09-13",
+  "repositories": [
+    {
+      "id": 1,
+      "full_name": "microsoft/vscode",
+      "stargazers_count": 170000,
+      "forks_count": 30000,
+      "watchers_count": 4000,
+      "pushed_at": "2026-09-11T00:00:00Z"
+    },
+    {
+      "id": 2,
+      "full_name": "pytorch/pytorch",
+      "stargazers_count": 90000,
+      "forks_count": 24000,
+      "watchers_count": 2500,
+      "pushed_at": "2026-09-11T00:00:00Z"
+    },
+    {
+      "id": 3,
+      "full_name": "ollama/ollama",
+      "stargazers_count": 150000,
+      "forks_count": 12000,
+      "watchers_count": 2200,
+      "pushed_at": "2026-09-11T00:00:00Z"
+    },
+    {
+      "id": 4,
+      "full_name": "comfyanonymous/ComfyUI",
+      "stargazers_count": 100000,
+      "forks_count": 13000,
+      "watchers_count": 1700,
+      "pushed_at": "2026-09-10T00:00:00Z"
+    },
+    {
+      "id": 5,
+      "full_name": "AUTOMATIC1111/stable-diffusion-webui",
+      "stargazers_count": 150000,
+      "forks_count": 28000,
+      "watchers_count": 2500,
+      "pushed_at": "2026-08-20T00:00:00Z"
+    },
+    {
+      "id": 6,
+      "full_name": "obsproject/obs-studio",
+      "stargazers_count": 65000,
+      "forks_count": 8500,
+      "watchers_count": 1300,
+      "pushed_at": "2026-09-11T00:00:00Z"
+    },
+    {
+      "id": 7,
+      "full_name": "KDE/kdenlive",
+      "stargazers_count": 12000,
+      "forks_count": 1000,
+      "watchers_count": 300,
+      "pushed_at": "2026-09-09T00:00:00Z"
+    },
+    {
+      "id": 8,
+      "full_name": "blender/blender",
+      "stargazers_count": 45000,
+      "forks_count": 5000,
+      "watchers_count": 900,
+      "pushed_at": "2026-09-11T00:00:00Z"
+    },
+    {
+      "id": 9,
+      "full_name": "godotengine/godot",
+      "stargazers_count": 100000,
+      "forks_count": 22000,
+      "watchers_count": 1800,
+      "pushed_at": "2026-09-11T00:00:00Z"
+    },
+    {
+      "id": 10,
+      "full_name": "FreeCAD/FreeCAD",
+      "stargazers_count": 22000,
+      "forks_count": 4000,
+      "watchers_count": 500,
+      "pushed_at": "2026-09-10T00:00:00Z"
+    },
+    {
+      "id": 11,
+      "full_name": "brave/brave-browser",
+      "stargazers_count": 21000,
+      "forks_count": 2500,
+      "watchers_count": 500,
+      "pushed_at": "2026-09-11T00:00:00Z"
+    },
+    {
+      "id": 12,
+      "full_name": "signalapp/Signal-Android",
+      "stargazers_count": 28000,
+      "forks_count": 6500,
+      "watchers_count": 600,
+      "pushed_at": "2026-09-11T00:00:00Z"
+    },
+    {
+      "id": 13,
+      "full_name": "material-components/material-components-android",
+      "stargazers_count": 17000,
+      "forks_count": 5000,
+      "watchers_count": 450,
+      "pushed_at": "2026-09-10T00:00:00Z"
+    },
+    {
+      "id": 14,
+      "full_name": "immich-app/immich",
+      "stargazers_count": 80000,
+      "forks_count": 4500,
+      "watchers_count": 900,
+      "pushed_at": "2026-09-11T00:00:00Z"
+    },
+    {
+      "id": 15,
+      "full_name": "jellyfin/jellyfin",
+      "stargazers_count": 40000,
+      "forks_count": 4500,
+      "watchers_count": 700,
+      "pushed_at": "2026-09-11T00:00:00Z"
+    },
+    {
+      "id": 16,
+      "full_name": "element-hq/element-desktop",
+      "stargazers_count": 8000,
+      "forks_count": 1300,
+      "watchers_count": 200,
+      "pushed_at": "2026-09-10T00:00:00Z"
+    },
+    {
+      "id": 17,
+      "full_name": "nextcloud/server",
+      "stargazers_count": 30000,
+      "forks_count": 4500,
+      "watchers_count": 500,
+      "pushed_at": "2026-09-11T00:00:00Z"
+    },
+    {
+      "id": 18,
+      "full_name": "obsidianmd/obsidian-releases",
+      "stargazers_count": 3000,
+      "forks_count": 1000,
+      "watchers_count": 150,
+      "pushed_at": "2026-09-09T00:00:00Z"
+    },
+    {
+      "id": 19,
+      "full_name": "BurntSushi/ripgrep",
+      "stargazers_count": 52000,
+      "forks_count": 2000,
+      "watchers_count": 500,
+      "pushed_at": "2026-09-08T00:00:00Z"
+    },
+    {
+      "id": 20,
+      "full_name": "microsoft/terminal",
+      "stargazers_count": 100000,
+      "forks_count": 8500,
+      "watchers_count": 1500,
+      "pushed_at": "2026-09-11T00:00:00Z"
+    },
+    {
+      "id": 21,
+      "full_name": "gnachman/iTerm2",
+      "stargazers_count": 16000,
+      "forks_count": 1500,
+      "watchers_count": 400,
+      "pushed_at": "2026-09-10T00:00:00Z"
+    },
+    {
+      "id": 22,
+      "full_name": "microsoft/PowerToys",
+      "stargazers_count": 120000,
+      "forks_count": 7500,
+      "watchers_count": 1800,
+      "pushed_at": "2026-09-11T00:00:00Z"
+    },
+    {
+      "id": 23,
+      "full_name": "keepassxreboot/keepassxc",
+      "stargazers_count": 22000,
+      "forks_count": 2200,
+      "watchers_count": 350,
+      "pushed_at": "2026-09-09T00:00:00Z"
+    },
+    {
+      "id": 24,
+      "full_name": "torvalds/linux",
+      "stargazers_count": 220000,
+      "forks_count": 70000,
+      "watchers_count": 8000,
+      "pushed_at": "2026-09-11T00:00:00Z"
+    }
+  ]
+}
