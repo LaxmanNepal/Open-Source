@@ -87,13 +87,59 @@ jobs:
           jq 'unique_by(.id) | map({id,name,full_name,html_url,description,homepage,topics,language,license,stargazers_count,forks_count,watchers_count,open_issues_count,size,default_branch,created_at,updated_at,pushed_at,owner:{login:.owner.login,avatar_url:.owner.avatar_url}})' /tmp/repos.json > /tmp/catalog-repositories.json
 
           python3 - <<'PY'
-          import json,datetime
+          import json,datetime,re
           p='/tmp/catalog-repositories.json'
           data=json.load(open(p))
+
+          def hay(r):
+              parts=[r.get('name',''),r.get('description',''),r.get('homepage',''),r.get('language','')]
+              parts += r.get('topics') or []
+              return ' '.join(str(x or '') for x in parts).lower()
+
+          def platform_intelligence(r):
+              t=hay(r)
+              lang=(r.get('language') or '').lower()
+              topics=' '.join(r.get('topics') or []).lower()
+              scores={p:0 for p in ['Android','iOS','macOS','Windows','Linux','Web']}
+              evidence={p:[] for p in scores}
+
+              rules={
+                'Android':[(r'\bandroid\b',6,'android'),(r'\bkotlin\b',4,'kotlin'),(r'jetpack',4,'jetpack'),(r'\bapk\b',5,'apk'),(r'android studio',4,'android studio')],
+                'iOS':[(r'\bios\b',6,'ios'),(r'\bswift\b',4,'swift'),(r'\bipad\b',3,'ipad'),(r'\biphone\b',3,'iphone'),(r'\bipa\b',5,'ipa')],
+                'macOS':[(r'\bmacos\b|\bmac os\b',6,'macOS'),(r'\bswift\b',3,'swift'),(r'objective-c',4,'objective-c'),(r'homebrew',4,'homebrew'),(r'\.dmg\b|\.pkg\b',5,'installer')],
+                'Windows':[(r'\bwindows\b',6,'windows'),(r'win32|wpf|uwp',5,'windows framework'),(r'powershell',4,'powershell'),(r'\.exe\b|\.msi\b|\.msix\b|\.appx\b',5,'installer')],
+                'Linux':[(r'\blinux\b',6,'linux'),(r'\bubuntu\b|\bdebian\b|\barch\b',4,'linux distro'),(r'wayland|gtk|kde',4,'linux desktop'),(r'\.appimage\b|\.deb\b|\.rpm\b|\.flatpak\b|\.snap\b',5,'installer')],
+                'Web':[(r'\bweb\b|website|webapp|web app',4,'web'),(r'javascript|typescript',2,'web language'),(r'react|vue|angular|next\.js|svelte',4,'web framework'),(r'chrome extension|browser extension|firefox extension',5,'browser extension')]
+              }
+              for platform,checks in rules.items():
+                  for pattern,weight,label in checks:
+                      if re.search(pattern,t):
+                          scores[platform]+=weight
+                          evidence[platform].append(label)
+              if lang in ('kotlin','java') and ('android' in t or 'jetpack' in topics): scores['Android']+=3
+              if lang=='swift' and ('ios' in t or 'iphone' in t or 'ipad' in t): scores['iOS']+=3
+              if lang=='swift' and ('macos' in t or 'mac os' in t): scores['macOS']+=3
+
+              ranked=sorted(scores.items(),key=lambda x:x[1],reverse=True)
+              strong=[p for p,s in ranked if s>=6]
+              if not strong:
+                  strong=['Cross-platform']
+              elif len(strong)>1 and ranked[1][1] < ranked[0][1]*0.45:
+                  strong=strong[:1]
+              return strong, {p:{'score':scores[p],'evidence':evidence[p][:5]} for p in strong if p!='Cross-platform'}
+
+          for r in data:
+              platforms,evidence=platform_intelligence(r)
+              r['_platforms']=platforms
+              r['_platform_scores']=evidence
+
           data.sort(key=lambda x:(x.get('stargazers_count') or 0),reverse=True)
           years=sorted({x['created_at'][:4] for x in data if x.get('created_at')},reverse=True)
           languages=sorted({x.get('language') for x in data if x.get('language')},key=str.lower)
           licenses=sorted({(x.get('license') or {}).get('spdx_id') for x in data if (x.get('license') or {}).get('spdx_id')},key=str.lower)
+          platform_counts={}
+          for x in data:
+              for p in x.get('_platforms',[]): platform_counts[p]=platform_counts.get(p,0)+1
           meta={
             'generated_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),
             'repository_count':len(data),
@@ -101,14 +147,17 @@ jobs:
             'years':years,
             'languages':languages,
             'licenses':licenses,
+            'platforms':platform_counts,
             'source':'GitHub public repository search',
-            'query_count':len(queries),
-            'pages_per_query':3
+            'query_count':24,
+            'pages_per_query':3,
+            'platform_detection':'weighted metadata intelligence'
           }
           json.dump({'meta':meta,'repositories':data},open('data/catalog.json','w'),ensure_ascii=False,separators=(',',':'))
           PY
 
           echo "Catalog repositories: $(jq '.meta.repository_count' data/catalog.json)"
+          echo "Platform intelligence: $(jq -r '.meta.platforms | to_entries | map("\(.key)=\(.value)") | join(", ")' data/catalog.json)"
 
       - name: Commit catalog
         run: |
