@@ -15,7 +15,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build broad 1000-repository catalog from GitHub Search API
+      - name: Build broad repository catalog from GitHub Search API
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
@@ -44,38 +44,76 @@ jobs:
             'windows open source app desktop PowerShell stars:>50 archived:false'
             'linux open source desktop Wayland GTK KDE stars:>50 archived:false'
             'cross platform open source desktop app stars:>50 archived:false'
+            'open source web application self hosted stars:>50 archived:false'
+            'open source browser extension stars:>50 archived:false'
+            'open source database storage engine stars:>100 archived:false'
+            'open source networking proxy VPN DNS stars:>100 archived:false'
           )
+
+          search() {
+            local query="$1" page="$2"
+            python3 - "$query" "$page" <<'PY'
+          import os,sys,urllib.parse,urllib.request
+          q,page=sys.argv[1],sys.argv[2]
+          url='https://api.github.com/search/repositories?'+urllib.parse.urlencode({
+            'q':q,'sort':'stars','order':'desc','per_page':100,'page':page
+          })
+          req=urllib.request.Request(url,headers={
+            'Accept':'application/vnd.github+json',
+            'Authorization':'Bearer '+os.environ['GH_TOKEN'],
+            'X-GitHub-Api-Version':'2022-11-28'
+          })
+          with urllib.request.urlopen(req,timeout=30) as r:
+            print(r.read().decode())
+          PY
+          }
+
           for q in "${queries[@]}"; do
-            encoded=$(python3 -c 'import urllib.parse,sys; print(urllib.parse.quote(sys.argv[1]))' "$q")
-            curl -fsSL --retry 3 --retry-delay 2 -H "Accept: application/vnd.github+json" -H "Authorization: Bearer $GH_TOKEN" "https://api.github.com/search/repositories?q=$encoded&sort=stars&order=desc&per_page=50" | jq '.items' > /tmp/current.json
-            jq -s '.[0] + .[1]' /tmp/repos.json /tmp/current.json > /tmp/merged.json
-            mv /tmp/merged.json /tmp/repos.json
-            sleep 0.3
+            for page in 1 2 3; do
+              if ! search "$q" "$page" > /tmp/current-response.json; then
+                echo "Search failed for: $q page $page" >&2
+                break
+              fi
+              jq -e '.items' /tmp/current-response.json >/dev/null || break
+              jq '.items' /tmp/current-response.json > /tmp/current.json
+              jq -s '.[0] + .[1]' /tmp/repos.json /tmp/current.json > /tmp/merged.json
+              mv /tmp/merged.json /tmp/repos.json
+              count=$(jq '.items | length' /tmp/current-response.json)
+              [ "$count" -lt 100 ] && break
+              sleep 0.35
+            done
           done
-          jq 'unique_by(.id) | map({id,name,full_name,html_url,description,topics,language,license,stargazers_count,forks_count,watchers_count,open_issues_count,size,created_at,updated_at,pushed_at,owner:{login:.owner.login,avatar_url:.owner.avatar_url}})' /tmp/repos.json > data/catalog.json
+
+          jq 'unique_by(.id) | map({id,name,full_name,html_url,description,homepage,topics,language,license,stargazers_count,forks_count,watchers_count,open_issues_count,size,default_branch,created_at,updated_at,pushed_at,owner:{login:.owner.login,avatar_url:.owner.avatar_url}})' /tmp/repos.json > /tmp/catalog-repositories.json
+
           python3 - <<'PY'
-          import json, datetime
-          p='data/catalog.json'
+          import json,datetime
+          p='/tmp/catalog-repositories.json'
           data=json.load(open(p))
-          years=sorted({x['created_at'][:4] for x in data if x.get('created_at')}, reverse=True)
-          languages=sorted({x.get('language') for x in data if x.get('language')}, key=str.lower)
-          licenses=sorted({(x.get('license') or {}).get('spdx_id') for x in data if (x.get('license') or {}).get('spdx_id')}, key=str.lower)
+          data.sort(key=lambda x:(x.get('stargazers_count') or 0),reverse=True)
+          years=sorted({x['created_at'][:4] for x in data if x.get('created_at')},reverse=True)
+          languages=sorted({x.get('language') for x in data if x.get('language')},key=str.lower)
+          licenses=sorted({(x.get('license') or {}).get('spdx_id') for x in data if (x.get('license') or {}).get('spdx_id')},key=str.lower)
           meta={
             'generated_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),
             'repository_count':len(data),
+            'target_repository_count':1000,
             'years':years,
             'languages':languages,
             'licenses':licenses,
             'source':'GitHub public repository search',
-            'query_count':len(queries)
+            'query_count':len(queries),
+            'pages_per_query':3
           }
-          json.dump({'meta':meta,'repositories':data},open(p,'w'),ensure_ascii=False,separators=(',',':'))
+          json.dump({'meta':meta,'repositories':data},open('data/catalog.json','w'),ensure_ascii=False,separators=(',',':'))
           PY
+
+          echo "Catalog repositories: $(jq '.meta.repository_count' data/catalog.json)"
 
       - name: Commit catalog
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add data/catalog.json
-          git diff --cached --quiet || git commit -m "chore: refresh 1000-repository discovery catalog"
+          git diff --cached --quiet || git commit -m "chore: refresh discovery catalog"
           git push
