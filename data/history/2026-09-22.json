@@ -1,0 +1,1645 @@
+{
+  "date": "2026-09-22",
+  "repositories": [
+    {
+      "id": 29887499,
+      "full_name": "dkhamsing/open-source-ios-apps",
+      "stargazers_count": 52225,
+      "forks_count": 6104,
+      "watchers_count": 52225,
+      "pushed_at": "2026-09-21T17:07:04Z"
+    },
+    {
+      "id": 468515960,
+      "full_name": "CodeEditApp/CodeEdit",
+      "stargazers_count": 23039,
+      "forks_count": 1189,
+      "watchers_count": 23039,
+      "pushed_at": "2026-08-18T21:24:35Z"
+    },
+    {
+      "id": 292374787,
+      "full_name": "stas00/ml-engineering",
+      "stargazers_count": 19030,
+      "forks_count": 1250,
+      "watchers_count": 19030,
+      "pushed_at": "2026-09-12T00:13:55Z"
+    },
+    {
+      "id": 1101281251,
+      "full_name": "komi-store/komi-store",
+      "stargazers_count": 18668,
+      "forks_count": 712,
+      "watchers_count": 18668,
+      "pushed_at": "2026-09-04T10:31:18Z"
+    },
+    {
+      "id": 1145022970,
+      "full_name": "HBAI-Ltd/Toonflow-app",
+      "stargazers_count": 15873,
+      "forks_count": 2844,
+      "watchers_count": 15873,
+      "pushed_at": "2026-09-22T04:05:14Z"
+    },
+    {
+      "id": 910418754,
+      "full_name": "nanobrowser/nanobrowser",
+      "stargazers_count": 13819,
+      "forks_count": 1460,
+      "watchers_count": 13819,
+      "pushed_at": "2026-08-18T00:42:48Z"
+    },
+    {
+      "id": 531220682,
+      "full_name": "dicedb/dicedb",
+      "stargazers_count": 10768,
+      "forks_count": 1399,
+      "watchers_count": 10768,
+      "pushed_at": "2026-04-23T01:00:36Z"
+    },
+    {
+      "id": 132453438,
+      "full_name": "unoplatform/uno",
+      "stargazers_count": 10056,
+      "forks_count": 883,
+      "watchers_count": 10056,
+      "pushed_at": "2026-09-22T04:56:10Z"
+    },
+    {
+      "id": 734569425,
+      "full_name": "FluentRead/FluentRead",
+      "stargazers_count": 8174,
+      "forks_count": 417,
+      "watchers_count": 8174,
+      "pushed_at": "2026-09-16T16:03:44Z"
+    },
+    {
+      "id": 203999962,
+      "full_name": "open-mmlab/mmagic",
+      "stargazers_count": 7466,
+      "forks_count": 1097,
+      "watchers_count": 7466,
+      "pushed_at": "2024-08-06T07:19:40Z"
+    },
+    {
+      "id": 72375372,
+      "full_name": "Kavex/GameDev-Resources",
+      "stargazers_count": 6993,
+      "forks_count": 573,
+      "watchers_count": 6993,
+      "pushed_at": "2026-04-10T19:20:30Z"
+    },
+    {
+      "id": 83187656,
+      "full_name": "EllanJiang/GameFramework",
+      "stargazers_count": 6882,
+      "forks_count": 1571,
+      "watchers_count": 6882,
+      "pushed_at": "2023-09-05T13:24:31Z"
+    },
+    {
+      "id": 480217156,
+      "full_name": "GreptimeTeam/greptimedb",
+      "stargazers_count": 6697,
+      "forks_count": 547,
+      "watchers_count": 6697,
+      "pushed_at": "2026-09-22T04:59:14Z"
+    },
+    {
+      "id": 4315538,
+      "full_name": "defold/defold",
+      "stargazers_count": 6308,
+      "forks_count": 455,
+      "watchers_count": 6308,
+      "pushed_at": "2026-09-21T21:11:00Z"
+    },
+    {
+      "id": 267792621,
+      "full_name": "Tencent/TNN",
+      "stargazers_count": 4652,
+      "forks_count": 772,
+      "watchers_count": 4652,
+      "pushed_at": "2025-05-09T07:33:14Z"
+    },
+    {
+      "id": 164433070,
+      "full_name": "HuaizhengZhang/AI-Infra-from-Zero-to-Hero",
+      "stargazers_count": 4392,
+      "forks_count": 414,
+      "watchers_count": 4392,
+      "pushed_at": "2025-07-25T02:24:35Z"
+    },
+    {
+      "id": 101770883,
+      "full_name": "tortuvshin/open-apps",
+      "stargazers_count": 4354,
+      "forks_count": 806,
+      "watchers_count": 4354,
+      "pushed_at": "2026-09-22T00:40:40Z"
+    },
+    {
+      "id": 66190491,
+      "full_name": "rumboalla/apkupdater",
+      "stargazers_count": 4003,
+      "forks_count": 284,
+      "watchers_count": 4003,
+      "pushed_at": "2026-05-28T11:22:07Z"
+    },
+    {
+      "id": 49219232,
+      "full_name": "UnevenSoftware/LeafPic",
+      "stargazers_count": 3264,
+      "forks_count": 1328,
+      "watchers_count": 3264,
+      "pushed_at": "2024-02-14T23:27:23Z"
+    },
+    {
+      "id": 1006258471,
+      "full_name": "FluidInference/FluidAudio",
+      "stargazers_count": 2838,
+      "forks_count": 429,
+      "watchers_count": 2838,
+      "pushed_at": "2026-09-21T20:27:01Z"
+    },
+    {
+      "id": 276471933,
+      "full_name": "androiddevnotes/awesome-android-kotlin-apps",
+      "stargazers_count": 2747,
+      "forks_count": 380,
+      "watchers_count": 2747,
+      "pushed_at": "2024-07-01T22:14:17Z"
+    },
+    {
+      "id": 1073214662,
+      "full_name": "jqssun/android-titanium-browser",
+      "stargazers_count": 2688,
+      "forks_count": 123,
+      "watchers_count": 2688,
+      "pushed_at": "2026-09-19T23:35:14Z"
+    },
+    {
+      "id": 523491444,
+      "full_name": "divkit/divkit",
+      "stargazers_count": 2674,
+      "forks_count": 194,
+      "watchers_count": 2674,
+      "pushed_at": "2026-09-21T22:58:58Z"
+    },
+    {
+      "id": 96181975,
+      "full_name": "EllanJiang/UnityGameFramework",
+      "stargazers_count": 2573,
+      "forks_count": 569,
+      "watchers_count": 2573,
+      "pushed_at": "2023-05-21T12:57:24Z"
+    },
+    {
+      "id": 14096024,
+      "full_name": "piqnt/stage.js",
+      "stargazers_count": 2570,
+      "forks_count": 245,
+      "watchers_count": 2570,
+      "pushed_at": "2026-04-07T09:57:40Z"
+    },
+    {
+      "id": 295411072,
+      "full_name": "Kotlin/kmp-production-sample",
+      "stargazers_count": 2282,
+      "forks_count": 262,
+      "watchers_count": 2282,
+      "pushed_at": "2026-09-18T14:13:26Z"
+    },
+    {
+      "id": 322456167,
+      "full_name": "Websoft9/websoft9",
+      "stargazers_count": 2127,
+      "forks_count": 321,
+      "watchers_count": 2127,
+      "pushed_at": "2026-09-21T06:54:00Z"
+    },
+    {
+      "id": 212085971,
+      "full_name": "janoodleFTW/timy-messenger",
+      "stargazers_count": 2103,
+      "forks_count": 442,
+      "watchers_count": 2103,
+      "pushed_at": "2023-01-09T11:56:55Z"
+    },
+    {
+      "id": 536064548,
+      "full_name": "toeverything/OctoBase",
+      "stargazers_count": 2070,
+      "forks_count": 141,
+      "watchers_count": 2070,
+      "pushed_at": "2025-03-05T06:29:15Z"
+    },
+    {
+      "id": 32973467,
+      "full_name": "codenameone/CodenameOne",
+      "stargazers_count": 1869,
+      "forks_count": 435,
+      "watchers_count": 1869,
+      "pushed_at": "2026-09-22T04:51:38Z"
+    },
+    {
+      "id": 618967657,
+      "full_name": "aptabase/aptabase",
+      "stargazers_count": 1818,
+      "forks_count": 139,
+      "watchers_count": 1818,
+      "pushed_at": "2026-09-13T14:45:45Z"
+    },
+    {
+      "id": 278011746,
+      "full_name": "nsfw-filter/nsfw-filter",
+      "stargazers_count": 1785,
+      "forks_count": 186,
+      "watchers_count": 1785,
+      "pushed_at": "2026-09-19T04:30:00Z"
+    },
+    {
+      "id": 224907324,
+      "full_name": "kyleskom/NBA-Machine-Learning-Sports-Betting",
+      "stargazers_count": 1717,
+      "forks_count": 569,
+      "watchers_count": 1717,
+      "pushed_at": "2026-09-12T18:41:05Z"
+    },
+    {
+      "id": 127941481,
+      "full_name": "kubeflow/katib",
+      "stargazers_count": 1704,
+      "forks_count": 544,
+      "watchers_count": 1704,
+      "pushed_at": "2026-09-20T06:38:00Z"
+    },
+    {
+      "id": 856550745,
+      "full_name": "orbitinghail/graft",
+      "stargazers_count": 1547,
+      "forks_count": 37,
+      "watchers_count": 1547,
+      "pushed_at": "2026-09-16T21:35:25Z"
+    },
+    {
+      "id": 781524183,
+      "full_name": "WecoAI/aideml",
+      "stargazers_count": 1536,
+      "forks_count": 227,
+      "watchers_count": 1536,
+      "pushed_at": "2026-09-03T15:58:13Z"
+    },
+    {
+      "id": 291133502,
+      "full_name": "androiddevnotes/awesome-jetpack-compose-android-apps",
+      "stargazers_count": 1523,
+      "forks_count": 150,
+      "watchers_count": 1523,
+      "pushed_at": "2024-07-25T13:30:32Z"
+    },
+    {
+      "id": 586207268,
+      "full_name": "hudikhq/hoodik",
+      "stargazers_count": 1482,
+      "forks_count": 69,
+      "watchers_count": 1482,
+      "pushed_at": "2026-09-22T04:27:51Z"
+    },
+    {
+      "id": 412261785,
+      "full_name": "stevinz/awesome-game-engine-dev",
+      "stargazers_count": 1413,
+      "forks_count": 109,
+      "watchers_count": 1413,
+      "pushed_at": "2026-08-17T18:26:37Z"
+    },
+    {
+      "id": 824672,
+      "full_name": "tnantoka/edhita",
+      "stargazers_count": 1396,
+      "forks_count": 249,
+      "watchers_count": 1396,
+      "pushed_at": "2026-02-25T13:20:57Z"
+    },
+    {
+      "id": 737122445,
+      "full_name": "Acclorite/book-story",
+      "stargazers_count": 1394,
+      "forks_count": 96,
+      "watchers_count": 1394,
+      "pushed_at": "2026-02-20T16:00:38Z"
+    },
+    {
+      "id": 99233177,
+      "full_name": "jogendra/example-ios-apps",
+      "stargazers_count": 1371,
+      "forks_count": 267,
+      "watchers_count": 1371,
+      "pushed_at": "2024-07-02T16:14:55Z"
+    },
+    {
+      "id": 287839132,
+      "full_name": "nang-dev/hover-paywalls-browser-extension",
+      "stargazers_count": 1309,
+      "forks_count": 179,
+      "watchers_count": 1309,
+      "pushed_at": "2024-08-22T18:54:54Z"
+    },
+    {
+      "id": 71117099,
+      "full_name": "dsward2/macSVG",
+      "stargazers_count": 1290,
+      "forks_count": 83,
+      "watchers_count": 1290,
+      "pushed_at": "2022-07-17T04:46:15Z"
+    },
+    {
+      "id": 376585651,
+      "full_name": "HemmeligOrg/Hemmelig.app",
+      "stargazers_count": 1245,
+      "forks_count": 113,
+      "watchers_count": 1245,
+      "pushed_at": "2026-09-03T01:30:57Z"
+    },
+    {
+      "id": 227157665,
+      "full_name": "inexorgame/vulkan-renderer",
+      "stargazers_count": 1222,
+      "forks_count": 49,
+      "watchers_count": 1222,
+      "pushed_at": "2026-08-10T23:43:59Z"
+    },
+    {
+      "id": 653179741,
+      "full_name": "WirelessAlien/ZipXtract",
+      "stargazers_count": 1137,
+      "forks_count": 49,
+      "watchers_count": 1137,
+      "pushed_at": "2026-09-12T07:11:01Z"
+    },
+    {
+      "id": 181849396,
+      "full_name": "ikrima/gamedevguide",
+      "stargazers_count": 1113,
+      "forks_count": 111,
+      "watchers_count": 1113,
+      "pushed_at": "2026-08-09T04:32:58Z"
+    },
+    {
+      "id": 801915364,
+      "full_name": "mobilenetworkltd/openapk",
+      "stargazers_count": 1070,
+      "forks_count": 41,
+      "watchers_count": 1070,
+      "pushed_at": "2026-09-21T09:27:36Z"
+    },
+    {
+      "id": 1124631986,
+      "full_name": "bishwaghimire/ai-learning-roadmaps",
+      "stargazers_count": 1070,
+      "forks_count": 123,
+      "watchers_count": 1070,
+      "pushed_at": "2026-06-15T08:02:50Z"
+    },
+    {
+      "id": 42005563,
+      "full_name": "megamarc/Tilengine",
+      "stargazers_count": 1057,
+      "forks_count": 105,
+      "watchers_count": 1057,
+      "pushed_at": "2026-08-27T14:38:09Z"
+    },
+    {
+      "id": 167493223,
+      "full_name": "rossmoody/svg-gobbler",
+      "stargazers_count": 1052,
+      "forks_count": 45,
+      "watchers_count": 1052,
+      "pushed_at": "2026-09-09T09:08:27Z"
+    },
+    {
+      "id": 71087084,
+      "full_name": "begla/Intrinsic",
+      "stargazers_count": 1045,
+      "forks_count": 73,
+      "watchers_count": 1045,
+      "pushed_at": "2023-04-21T09:42:43Z"
+    },
+    {
+      "id": 982835425,
+      "full_name": "analyticalrohit/AI-ML-Cheatsheets",
+      "stargazers_count": 1002,
+      "forks_count": 189,
+      "watchers_count": 1002,
+      "pushed_at": "2026-01-06T13:04:53Z"
+    },
+    {
+      "id": 815431460,
+      "full_name": "BinWang28/audio-ai-hub",
+      "stargazers_count": 958,
+      "forks_count": 54,
+      "watchers_count": 958,
+      "pushed_at": "2026-09-21T10:02:32Z"
+    },
+    {
+      "id": 605020932,
+      "full_name": "unisat-wallet/extension",
+      "stargazers_count": 947,
+      "forks_count": 414,
+      "watchers_count": 947,
+      "pushed_at": "2026-03-10T07:58:58Z"
+    },
+    {
+      "id": 194523292,
+      "full_name": "swiftyapp/swifty",
+      "stargazers_count": 944,
+      "forks_count": 80,
+      "watchers_count": 944,
+      "pushed_at": "2026-09-22T03:28:26Z"
+    },
+    {
+      "id": 729821133,
+      "full_name": "TippingGame/F8Framework",
+      "stargazers_count": 884,
+      "forks_count": 141,
+      "watchers_count": 884,
+      "pushed_at": "2026-09-15T17:53:52Z"
+    },
+    {
+      "id": 1078413905,
+      "full_name": "CelaDaniel/free-ai-resources-x",
+      "stargazers_count": 882,
+      "forks_count": 126,
+      "watchers_count": 882,
+      "pushed_at": "2026-05-21T19:29:45Z"
+    },
+    {
+      "id": 1220224312,
+      "full_name": "brettchalupa/usagi",
+      "stargazers_count": 858,
+      "forks_count": 41,
+      "watchers_count": 858,
+      "pushed_at": "2026-09-14T19:03:41Z"
+    },
+    {
+      "id": 1099490130,
+      "full_name": "plutonhq/pluton",
+      "stargazers_count": 793,
+      "forks_count": 32,
+      "watchers_count": 793,
+      "pushed_at": "2026-09-09T13:50:51Z"
+    },
+    {
+      "id": 1248728151,
+      "full_name": "foru17/make-x-great-again",
+      "stargazers_count": 721,
+      "forks_count": 51,
+      "watchers_count": 721,
+      "pushed_at": "2026-09-22T00:01:20Z"
+    },
+    {
+      "id": 24654935,
+      "full_name": "merlos/iOS-Open-GPX-Tracker",
+      "stargazers_count": 718,
+      "forks_count": 161,
+      "watchers_count": 718,
+      "pushed_at": "2026-08-25T17:56:31Z"
+    },
+    {
+      "id": 233464042,
+      "full_name": "arthurhenrique/cookiecutter-fastapi",
+      "stargazers_count": 706,
+      "forks_count": 74,
+      "watchers_count": 706,
+      "pushed_at": "2025-08-25T15:58:56Z"
+    },
+    {
+      "id": 835525979,
+      "full_name": "earth-mover/icechunk",
+      "stargazers_count": 685,
+      "forks_count": 86,
+      "watchers_count": 685,
+      "pushed_at": "2026-09-22T00:10:08Z"
+    },
+    {
+      "id": 12887543,
+      "full_name": "Quenty/NevermoreEngine",
+      "stargazers_count": 612,
+      "forks_count": 144,
+      "watchers_count": 612,
+      "pushed_at": "2026-09-21T20:44:08Z"
+    },
+    {
+      "id": 1266852273,
+      "full_name": "chen2he/orange-cloud",
+      "stargazers_count": 579,
+      "forks_count": 113,
+      "watchers_count": 579,
+      "pushed_at": "2026-09-21T15:42:37Z"
+    },
+    {
+      "id": 124910572,
+      "full_name": "mozilla/bugbug",
+      "stargazers_count": 571,
+      "forks_count": 351,
+      "watchers_count": 571,
+      "pushed_at": "2026-09-22T03:13:55Z"
+    },
+    {
+      "id": 75905215,
+      "full_name": "IppClub/Dora-SSR",
+      "stargazers_count": 514,
+      "forks_count": 73,
+      "watchers_count": 514,
+      "pushed_at": "2026-09-21T15:36:10Z"
+    },
+    {
+      "id": 139071580,
+      "full_name": "domeengine/dome",
+      "stargazers_count": 486,
+      "forks_count": 40,
+      "watchers_count": 486,
+      "pushed_at": "2026-07-10T08:00:13Z"
+    },
+    {
+      "id": 1125655562,
+      "full_name": "baidu-baige/LoongFlow",
+      "stargazers_count": 477,
+      "forks_count": 58,
+      "watchers_count": 477,
+      "pushed_at": "2026-04-09T12:12:52Z"
+    },
+    {
+      "id": 622163915,
+      "full_name": "RiccardoBiosas/awesome-MLSecOps",
+      "stargazers_count": 469,
+      "forks_count": 111,
+      "watchers_count": 469,
+      "pushed_at": "2026-09-09T14:05:10Z"
+    },
+    {
+      "id": 1152766213,
+      "full_name": "tugcantopaloglu/godot-mcp",
+      "stargazers_count": 465,
+      "forks_count": 70,
+      "watchers_count": 465,
+      "pushed_at": "2026-07-13T08:04:01Z"
+    },
+    {
+      "id": 896173731,
+      "full_name": "viveknaskar/everything-ai-ml",
+      "stargazers_count": 462,
+      "forks_count": 59,
+      "watchers_count": 462,
+      "pushed_at": "2026-09-21T12:29:53Z"
+    },
+    {
+      "id": 237597220,
+      "full_name": "ryanpcmcquen/basque",
+      "stargazers_count": 451,
+      "forks_count": 27,
+      "watchers_count": 451,
+      "pushed_at": "2026-05-18T17:02:04Z"
+    },
+    {
+      "id": 1227817920,
+      "full_name": "LifetimeLabsDev/PrivacyNotes.app",
+      "stargazers_count": 443,
+      "forks_count": 36,
+      "watchers_count": 443,
+      "pushed_at": "2026-09-15T09:49:09Z"
+    },
+    {
+      "id": 168940213,
+      "full_name": "Dvergar/awesome-haxe-gamedev",
+      "stargazers_count": 423,
+      "forks_count": 19,
+      "watchers_count": 423,
+      "pushed_at": "2023-11-17T21:20:29Z"
+    },
+    {
+      "id": 83760362,
+      "full_name": "PolygonTek/BlueshiftEngine",
+      "stargazers_count": 422,
+      "forks_count": 47,
+      "watchers_count": 422,
+      "pushed_at": "2025-03-06T22:23:22Z"
+    },
+    {
+      "id": 76406859,
+      "full_name": "mikepan/GameEngineBook",
+      "stargazers_count": 420,
+      "forks_count": 79,
+      "watchers_count": 420,
+      "pushed_at": "2025-02-08T05:12:23Z"
+    },
+    {
+      "id": 160639899,
+      "full_name": "mitchmoser/sputnik",
+      "stargazers_count": 418,
+      "forks_count": 77,
+      "watchers_count": 418,
+      "pushed_at": "2026-02-27T17:04:00Z"
+    },
+    {
+      "id": 881051345,
+      "full_name": "turbostarter/extro",
+      "stargazers_count": 411,
+      "forks_count": 42,
+      "watchers_count": 411,
+      "pushed_at": "2026-08-21T10:28:24Z"
+    },
+    {
+      "id": 976390946,
+      "full_name": "amitshekhariitbhu/machine-learning-interview-questions",
+      "stargazers_count": 408,
+      "forks_count": 74,
+      "watchers_count": 408,
+      "pushed_at": "2026-09-16T07:00:07Z"
+    },
+    {
+      "id": 702150401,
+      "full_name": "goastian/midori-desktop",
+      "stargazers_count": 400,
+      "forks_count": 26,
+      "watchers_count": 400,
+      "pushed_at": "2026-09-19T03:22:55Z"
+    },
+    {
+      "id": 225932209,
+      "full_name": "ange-yaghi/delta-studio",
+      "stargazers_count": 397,
+      "forks_count": 62,
+      "watchers_count": 397,
+      "pushed_at": "2025-03-30T23:34:10Z"
+    },
+    {
+      "id": 340158206,
+      "full_name": "Xtrendence/Cryptofolio",
+      "stargazers_count": 366,
+      "forks_count": 65,
+      "watchers_count": 366,
+      "pushed_at": "2024-04-08T19:13:07Z"
+    },
+    {
+      "id": 436402751,
+      "full_name": "upgini/upgini",
+      "stargazers_count": 358,
+      "forks_count": 26,
+      "watchers_count": 358,
+      "pushed_at": "2026-09-21T15:07:07Z"
+    },
+    {
+      "id": 274472671,
+      "full_name": "zszszszsz/.config",
+      "stargazers_count": 357,
+      "forks_count": 97,
+      "watchers_count": 357,
+      "pushed_at": "2023-10-05T22:52:42Z"
+    },
+    {
+      "id": 274816729,
+      "full_name": "Littleor/iWidget",
+      "stargazers_count": 355,
+      "forks_count": 39,
+      "watchers_count": 355,
+      "pushed_at": "2023-10-11T11:48:55Z"
+    },
+    {
+      "id": 1254695975,
+      "full_name": "REBEL-ROOT/omni-browser",
+      "stargazers_count": 355,
+      "forks_count": 22,
+      "watchers_count": 355,
+      "pushed_at": "2026-09-18T00:59:37Z"
+    },
+    {
+      "id": 1025791059,
+      "full_name": "microsoft/godot-csharp-essentials",
+      "stargazers_count": 350,
+      "forks_count": 22,
+      "watchers_count": 350,
+      "pushed_at": "2026-01-16T01:07:18Z"
+    },
+    {
+      "id": 997507965,
+      "full_name": "chindaronit/Flux",
+      "stargazers_count": 344,
+      "forks_count": 21,
+      "watchers_count": 344,
+      "pushed_at": "2026-09-20T12:20:00Z"
+    },
+    {
+      "id": 889774053,
+      "full_name": "ct-js/ct-js",
+      "stargazers_count": 341,
+      "forks_count": 42,
+      "watchers_count": 341,
+      "pushed_at": "2026-05-23T12:41:08Z"
+    },
+    {
+      "id": 677521279,
+      "full_name": "mikaelacaron/Basic-Car-Maintenance",
+      "stargazers_count": 335,
+      "forks_count": 199,
+      "watchers_count": 335,
+      "pushed_at": "2026-07-30T22:00:28Z"
+    },
+    {
+      "id": 961144715,
+      "full_name": "whaleonearth/MLE-DS-Interview-Prep-Guide",
+      "stargazers_count": 321,
+      "forks_count": 82,
+      "watchers_count": 321,
+      "pushed_at": "2025-04-08T03:40:12Z"
+    },
+    {
+      "id": 660043863,
+      "full_name": "CyberCX-STA/PurpleOps",
+      "stargazers_count": 315,
+      "forks_count": 55,
+      "watchers_count": 315,
+      "pushed_at": "2026-09-16T04:39:29Z"
+    },
+    {
+      "id": 1337390717,
+      "full_name": "zorost/AI-Engineering-Lab",
+      "stargazers_count": 308,
+      "forks_count": 257,
+      "watchers_count": 308,
+      "pushed_at": "2026-08-17T19:36:07Z"
+    },
+    {
+      "id": 1254172144,
+      "full_name": "wellingfeng/UltraGameStudio",
+      "stargazers_count": 307,
+      "forks_count": 33,
+      "watchers_count": 307,
+      "pushed_at": "2026-09-12T04:13:48Z"
+    },
+    {
+      "id": 229809105,
+      "full_name": "runejs/server",
+      "stargazers_count": 300,
+      "forks_count": 100,
+      "watchers_count": 300,
+      "pushed_at": "2026-09-03T12:30:02Z"
+    },
+    {
+      "id": 1000933231,
+      "full_name": "Mr-Infect/AI-penetration-testing",
+      "stargazers_count": 287,
+      "forks_count": 60,
+      "watchers_count": 287,
+      "pushed_at": "2026-02-19T14:21:05Z"
+    },
+    {
+      "id": 239333158,
+      "full_name": "AscensionGameDev/Intersect-Engine",
+      "stargazers_count": 282,
+      "forks_count": 396,
+      "watchers_count": 282,
+      "pushed_at": "2026-07-16T07:47:15Z"
+    },
+    {
+      "id": 89323643,
+      "full_name": "seansfkelley/nas-download-manager",
+      "stargazers_count": 281,
+      "forks_count": 53,
+      "watchers_count": 281,
+      "pushed_at": "2026-08-28T17:37:41Z"
+    },
+    {
+      "id": 51590636,
+      "full_name": "passbolt/passbolt_browser_extension",
+      "stargazers_count": 277,
+      "forks_count": 104,
+      "watchers_count": 277,
+      "pushed_at": "2026-09-17T10:24:06Z"
+    },
+    {
+      "id": 643819057,
+      "full_name": "PacktPublishing/Godot-4-Game-Development-Projects-Second-Edition",
+      "stargazers_count": 272,
+      "forks_count": 72,
+      "watchers_count": 272,
+      "pushed_at": "2024-06-26T21:08:34Z"
+    },
+    {
+      "id": 180452009,
+      "full_name": "kidscancode/godot_recipes",
+      "stargazers_count": 271,
+      "forks_count": 43,
+      "watchers_count": 271,
+      "pushed_at": "2024-07-15T00:18:34Z"
+    },
+    {
+      "id": 1109549296,
+      "full_name": "rodrigogs/whats-reader",
+      "stargazers_count": 270,
+      "forks_count": 27,
+      "watchers_count": 270,
+      "pushed_at": "2026-09-11T02:03:38Z"
+    },
+    {
+      "id": 367791811,
+      "full_name": "Sfedfcv/redesigned-pancake",
+      "stargazers_count": 266,
+      "forks_count": 0,
+      "watchers_count": 266,
+      "pushed_at": "2021-05-16T05:22:26Z"
+    },
+    {
+      "id": 383201343,
+      "full_name": "alexdevassy/Machine_Learning_CTF_Challenges",
+      "stargazers_count": 266,
+      "forks_count": 33,
+      "watchers_count": 266,
+      "pushed_at": "2026-05-13T16:06:16Z"
+    },
+    {
+      "id": 1290003578,
+      "full_name": "kaybi-gh/K7",
+      "stargazers_count": 265,
+      "forks_count": 18,
+      "watchers_count": 265,
+      "pushed_at": "2026-09-21T10:19:49Z"
+    },
+    {
+      "id": 102286802,
+      "full_name": "egorikftp/Lady-happy-Android",
+      "stargazers_count": 263,
+      "forks_count": 20,
+      "watchers_count": 263,
+      "pushed_at": "2023-06-06T04:57:58Z"
+    },
+    {
+      "id": 985073971,
+      "full_name": "wildcatdb/wildcat",
+      "stargazers_count": 253,
+      "forks_count": 9,
+      "watchers_count": 253,
+      "pushed_at": "2026-02-13T23:47:11Z"
+    },
+    {
+      "id": 795256319,
+      "full_name": "jose-donato/ollama-reply",
+      "stargazers_count": 246,
+      "forks_count": 33,
+      "watchers_count": 246,
+      "pushed_at": "2024-05-03T15:15:17Z"
+    },
+    {
+      "id": 306048698,
+      "full_name": "nidorx/ecs-lua",
+      "stargazers_count": 234,
+      "forks_count": 69,
+      "watchers_count": 234,
+      "pushed_at": "2024-06-24T06:34:40Z"
+    },
+    {
+      "id": 594716752,
+      "full_name": "os-scar/overlay",
+      "stargazers_count": 229,
+      "forks_count": 22,
+      "watchers_count": 229,
+      "pushed_at": "2025-06-22T07:41:52Z"
+    },
+    {
+      "id": 367811056,
+      "full_name": "0x4f53/Wristkey",
+      "stargazers_count": 221,
+      "forks_count": 19,
+      "watchers_count": 221,
+      "pushed_at": "2026-09-16T03:51:12Z"
+    },
+    {
+      "id": 46401444,
+      "full_name": "SamThompson/BubbleActions",
+      "stargazers_count": 215,
+      "forks_count": 40,
+      "watchers_count": 215,
+      "pushed_at": "2017-04-17T15:31:09Z"
+    },
+    {
+      "id": 837407735,
+      "full_name": "adamff-dev/spam-call-blocker-app",
+      "stargazers_count": 208,
+      "forks_count": 15,
+      "watchers_count": 208,
+      "pushed_at": "2026-09-12T11:48:03Z"
+    },
+    {
+      "id": 903001486,
+      "full_name": "Binondi/Calculator-Hide-Files",
+      "stargazers_count": 205,
+      "forks_count": 23,
+      "watchers_count": 205,
+      "pushed_at": "2026-09-12T16:51:55Z"
+    },
+    {
+      "id": 920865301,
+      "full_name": "TomasTNunes/TMDB-Player",
+      "stargazers_count": 201,
+      "forks_count": 23,
+      "watchers_count": 201,
+      "pushed_at": "2026-09-21T20:18:49Z"
+    },
+    {
+      "id": 610465603,
+      "full_name": "walcht/neovim-unity",
+      "stargazers_count": 195,
+      "forks_count": 7,
+      "watchers_count": 195,
+      "pushed_at": "2026-03-24T11:47:12Z"
+    },
+    {
+      "id": 125522856,
+      "full_name": "DarkNightMode/Dark-Night-Mode-Chrome-Extension",
+      "stargazers_count": 192,
+      "forks_count": 32,
+      "watchers_count": 192,
+      "pushed_at": "2020-09-30T19:18:47Z"
+    },
+    {
+      "id": 2229838,
+      "full_name": "Kadoba/Advanced-Tiled-Loader",
+      "stargazers_count": 185,
+      "forks_count": 30,
+      "watchers_count": 185,
+      "pushed_at": "2023-08-04T08:05:02Z"
+    },
+    {
+      "id": 95591415,
+      "full_name": "andreasdr/tdme2",
+      "stargazers_count": 185,
+      "forks_count": 29,
+      "watchers_count": 185,
+      "pushed_at": "2025-11-08T20:43:03Z"
+    },
+    {
+      "id": 305486529,
+      "full_name": "mikehouse/Apple-TV-Player",
+      "stargazers_count": 184,
+      "forks_count": 36,
+      "watchers_count": 184,
+      "pushed_at": "2026-07-30T05:30:23Z"
+    },
+    {
+      "id": 387886757,
+      "full_name": "facebookincubator/meta-code-verify",
+      "stargazers_count": 183,
+      "forks_count": 39,
+      "watchers_count": 183,
+      "pushed_at": "2026-09-14T22:18:06Z"
+    },
+    {
+      "id": 63134929,
+      "full_name": "hummatli/AndroidAppUpdater",
+      "stargazers_count": 182,
+      "forks_count": 56,
+      "watchers_count": 182,
+      "pushed_at": "2023-02-12T20:52:25Z"
+    },
+    {
+      "id": 309984271,
+      "full_name": "PacktPublishing/Game-Development-Projects-with-Unreal-Engine",
+      "stargazers_count": 181,
+      "forks_count": 84,
+      "watchers_count": 181,
+      "pushed_at": "2021-01-22T09:04:19Z"
+    },
+    {
+      "id": 1220155104,
+      "full_name": "offendingcommit/openconcho",
+      "stargazers_count": 174,
+      "forks_count": 27,
+      "watchers_count": 174,
+      "pushed_at": "2026-08-31T15:02:47Z"
+    },
+    {
+      "id": 83909958,
+      "full_name": "slrbl/Intrusion-and-anomaly-detection-with-machine-learning",
+      "stargazers_count": 171,
+      "forks_count": 73,
+      "watchers_count": 171,
+      "pushed_at": "2025-11-06T09:25:46Z"
+    },
+    {
+      "id": 335737946,
+      "full_name": "repalash/Open-Shaders",
+      "stargazers_count": 164,
+      "forks_count": 17,
+      "watchers_count": 164,
+      "pushed_at": "2026-07-14T22:16:03Z"
+    },
+    {
+      "id": 106355076,
+      "full_name": "vnen/Godot-24-Hours",
+      "stargazers_count": 163,
+      "forks_count": 56,
+      "watchers_count": 163,
+      "pushed_at": "2019-06-09T18:55:41Z"
+    },
+    {
+      "id": 465698815,
+      "full_name": "linka-app/linka",
+      "stargazers_count": 163,
+      "forks_count": 6,
+      "watchers_count": 163,
+      "pushed_at": "2024-02-21T05:13:46Z"
+    },
+    {
+      "id": 218151890,
+      "full_name": "jettbrains/-L-",
+      "stargazers_count": 160,
+      "forks_count": 47,
+      "watchers_count": 160,
+      "pushed_at": "2021-08-18T13:41:54Z"
+    },
+    {
+      "id": 560355005,
+      "full_name": "PacktPublishing/Unreal-Engine-5-Game-Development-with-C-Scripting",
+      "stargazers_count": 159,
+      "forks_count": 44,
+      "watchers_count": 159,
+      "pushed_at": "2025-08-15T20:05:38Z"
+    },
+    {
+      "id": 217323713,
+      "full_name": "Technici4n/voxel-rs",
+      "stargazers_count": 157,
+      "forks_count": 17,
+      "watchers_count": 157,
+      "pushed_at": "2020-12-23T13:45:04Z"
+    },
+    {
+      "id": 4193000,
+      "full_name": "asantee/ethanon",
+      "stargazers_count": 150,
+      "forks_count": 54,
+      "watchers_count": 150,
+      "pushed_at": "2026-09-19T16:03:02Z"
+    },
+    {
+      "id": 3210598,
+      "full_name": "FrozenSand/ioq3-for-UrbanTerror-4",
+      "stargazers_count": 149,
+      "forks_count": 64,
+      "watchers_count": 149,
+      "pushed_at": "2023-02-03T11:26:40Z"
+    },
+    {
+      "id": 41698298,
+      "full_name": "nthegedus/ReviewTime",
+      "stargazers_count": 146,
+      "forks_count": 16,
+      "watchers_count": 146,
+      "pushed_at": "2017-06-02T17:44:07Z"
+    },
+    {
+      "id": 1299822792,
+      "full_name": "jqssun/android-titanium-extension",
+      "stargazers_count": 144,
+      "forks_count": 2,
+      "watchers_count": 144,
+      "pushed_at": "2026-08-21T21:47:05Z"
+    },
+    {
+      "id": 1153550046,
+      "full_name": "rayl15/OpenVision",
+      "stargazers_count": 142,
+      "forks_count": 33,
+      "watchers_count": 142,
+      "pushed_at": "2026-08-17T05:23:36Z"
+    },
+    {
+      "id": 29856864,
+      "full_name": "kevinvanderlugt/Swift-Walk-Tracker",
+      "stargazers_count": 137,
+      "forks_count": 44,
+      "watchers_count": 137,
+      "pushed_at": "2016-07-18T20:26:56Z"
+    },
+    {
+      "id": 62039610,
+      "full_name": "stefanvd/Browser-Extensions",
+      "stargazers_count": 137,
+      "forks_count": 41,
+      "watchers_count": 137,
+      "pushed_at": "2026-09-13T09:52:33Z"
+    },
+    {
+      "id": 66715773,
+      "full_name": "britzl/ludobits",
+      "stargazers_count": 137,
+      "forks_count": 12,
+      "watchers_count": 137,
+      "pushed_at": "2026-08-20T06:26:55Z"
+    },
+    {
+      "id": 1151601707,
+      "full_name": "romanyn36/agentic-ai-roadmap",
+      "stargazers_count": 135,
+      "forks_count": 2,
+      "watchers_count": 135,
+      "pushed_at": "2026-08-21T22:00:58Z"
+    },
+    {
+      "id": 98381774,
+      "full_name": "imrankst1221/Android-WebView-in-Kotlin",
+      "stargazers_count": 133,
+      "forks_count": 75,
+      "watchers_count": 133,
+      "pushed_at": "2020-05-31T07:21:50Z"
+    },
+    {
+      "id": 5753208,
+      "full_name": "iceddev/frozen",
+      "stargazers_count": 132,
+      "forks_count": 20,
+      "watchers_count": 132,
+      "pushed_at": "2018-12-28T23:17:53Z"
+    },
+    {
+      "id": 113021298,
+      "full_name": "roy-t/MiniRTS",
+      "stargazers_count": 132,
+      "forks_count": 14,
+      "watchers_count": 132,
+      "pushed_at": "2022-01-26T20:30:05Z"
+    },
+    {
+      "id": 190841003,
+      "full_name": "halavins/SwiftUI-Chat",
+      "stargazers_count": 129,
+      "forks_count": 28,
+      "watchers_count": 129,
+      "pushed_at": "2019-10-18T18:41:49Z"
+    },
+    {
+      "id": 426180570,
+      "full_name": "LeoColman/Petals",
+      "stargazers_count": 129,
+      "forks_count": 39,
+      "watchers_count": 129,
+      "pushed_at": "2026-09-19T14:33:51Z"
+    },
+    {
+      "id": 646701796,
+      "full_name": "numandev1/open-source-react-native-apps",
+      "stargazers_count": 129,
+      "forks_count": 16,
+      "watchers_count": 129,
+      "pushed_at": "2023-12-13T06:57:34Z"
+    },
+    {
+      "id": 1046818288,
+      "full_name": "CyberDrain/Check",
+      "stargazers_count": 128,
+      "forks_count": 115,
+      "watchers_count": 128,
+      "pushed_at": "2026-09-14T13:45:24Z"
+    },
+    {
+      "id": 29823614,
+      "full_name": "spheredev/neosphere",
+      "stargazers_count": 126,
+      "forks_count": 15,
+      "watchers_count": 126,
+      "pushed_at": "2025-11-30T01:35:23Z"
+    },
+    {
+      "id": 57168857,
+      "full_name": "dinodeck/dinodeck",
+      "stargazers_count": 123,
+      "forks_count": 18,
+      "watchers_count": 123,
+      "pushed_at": "2017-03-30T07:04:06Z"
+    },
+    {
+      "id": 414133365,
+      "full_name": "can-lehmann/exprgrad",
+      "stargazers_count": 120,
+      "forks_count": 1,
+      "watchers_count": 120,
+      "pushed_at": "2022-12-30T17:54:04Z"
+    },
+    {
+      "id": 64157105,
+      "full_name": "dkhamsing/osia",
+      "stargazers_count": 116,
+      "forks_count": 24,
+      "watchers_count": 116,
+      "pushed_at": "2022-08-15T13:38:30Z"
+    },
+    {
+      "id": 1122481530,
+      "full_name": "apphp/awesome-php-ml",
+      "stargazers_count": 116,
+      "forks_count": 9,
+      "watchers_count": 116,
+      "pushed_at": "2026-09-19T08:25:54Z"
+    },
+    {
+      "id": 1146742966,
+      "full_name": "marimo-team/modernaicourse",
+      "stargazers_count": 116,
+      "forks_count": 11,
+      "watchers_count": 116,
+      "pushed_at": "2026-08-20T00:59:25Z"
+    },
+    {
+      "id": 1283331609,
+      "full_name": "meyamane37923-hash/komikku-scans",
+      "stargazers_count": 115,
+      "forks_count": 0,
+      "watchers_count": 115,
+      "pushed_at": "2026-09-22T00:35:20Z"
+    },
+    {
+      "id": 143755141,
+      "full_name": "elringus/unity-console",
+      "stargazers_count": 114,
+      "forks_count": 10,
+      "watchers_count": 114,
+      "pushed_at": "2025-10-15T21:46:25Z"
+    },
+    {
+      "id": 1283330914,
+      "full_name": "khaledmahmud5286-cmd/manga-zen-reader",
+      "stargazers_count": 114,
+      "forks_count": 0,
+      "watchers_count": 114,
+      "pushed_at": "2026-09-22T00:25:18Z"
+    },
+    {
+      "id": 23678719,
+      "full_name": "MageStudio/Mage",
+      "stargazers_count": 113,
+      "forks_count": 15,
+      "watchers_count": 113,
+      "pushed_at": "2026-09-17T12:00:59Z"
+    },
+    {
+      "id": 600800239,
+      "full_name": "DosX-dev/SafeNova",
+      "stargazers_count": 113,
+      "forks_count": 5,
+      "watchers_count": 113,
+      "pushed_at": "2026-05-12T23:36:31Z"
+    },
+    {
+      "id": 711860702,
+      "full_name": "getoslash/oslash",
+      "stargazers_count": 111,
+      "forks_count": 22,
+      "watchers_count": 111,
+      "pushed_at": "2023-12-05T05:11:16Z"
+    },
+    {
+      "id": 10290074,
+      "full_name": "jdmclark/gorc",
+      "stargazers_count": 110,
+      "forks_count": 12,
+      "watchers_count": 110,
+      "pushed_at": "2020-12-21T02:34:33Z"
+    },
+    {
+      "id": 1148403874,
+      "full_name": "NyanTV/NyanTV",
+      "stargazers_count": 110,
+      "forks_count": 9,
+      "watchers_count": 110,
+      "pushed_at": "2026-06-28T01:41:38Z"
+    },
+    {
+      "id": 123838976,
+      "full_name": "ardovic/Open-Source-Android-Weather-App",
+      "stargazers_count": 107,
+      "forks_count": 88,
+      "watchers_count": 107,
+      "pushed_at": "2025-12-31T09:59:21Z"
+    },
+    {
+      "id": 202634323,
+      "full_name": "amiantos/gamebookengine",
+      "stargazers_count": 106,
+      "forks_count": 7,
+      "watchers_count": 106,
+      "pushed_at": "2026-09-18T22:30:25Z"
+    },
+    {
+      "id": 523394858,
+      "full_name": "zimly/zimly-backup",
+      "stargazers_count": 106,
+      "forks_count": 10,
+      "watchers_count": 106,
+      "pushed_at": "2026-02-28T12:25:54Z"
+    },
+    {
+      "id": 286494631,
+      "full_name": "UseHover/Stax",
+      "stargazers_count": 105,
+      "forks_count": 76,
+      "watchers_count": 105,
+      "pushed_at": "2024-02-01T18:18:51Z"
+    },
+    {
+      "id": 739004967,
+      "full_name": "awslabs/aiops-modules",
+      "stargazers_count": 105,
+      "forks_count": 36,
+      "watchers_count": 105,
+      "pushed_at": "2026-05-11T17:27:04Z"
+    },
+    {
+      "id": 112979324,
+      "full_name": "heisarzola/unity-development-tools",
+      "stargazers_count": 104,
+      "forks_count": 20,
+      "watchers_count": 104,
+      "pushed_at": "2022-03-12T18:53:45Z"
+    },
+    {
+      "id": 435328596,
+      "full_name": "certified84/AudioNote",
+      "stargazers_count": 102,
+      "forks_count": 9,
+      "watchers_count": 102,
+      "pushed_at": "2025-06-05T01:23:31Z"
+    },
+    {
+      "id": 56231755,
+      "full_name": "runo280/awesome-android",
+      "stargazers_count": 97,
+      "forks_count": 19,
+      "watchers_count": 97,
+      "pushed_at": "2020-11-24T14:59:29Z"
+    },
+    {
+      "id": 1036800395,
+      "full_name": "haideralsh/prompt-lab",
+      "stargazers_count": 96,
+      "forks_count": 1,
+      "watchers_count": 96,
+      "pushed_at": "2025-12-01T18:48:03Z"
+    },
+    {
+      "id": 191672548,
+      "full_name": "klonnet23/helloy-word",
+      "stargazers_count": 92,
+      "forks_count": 43,
+      "watchers_count": 92,
+      "pushed_at": "2022-08-29T16:59:38Z"
+    },
+    {
+      "id": 848348137,
+      "full_name": "febinbellamy/CodeHub",
+      "stargazers_count": 92,
+      "forks_count": 11,
+      "watchers_count": 92,
+      "pushed_at": "2026-07-18T16:31:31Z"
+    },
+    {
+      "id": 1312463075,
+      "full_name": "MkThingsHQ/mkext",
+      "stargazers_count": 92,
+      "forks_count": 22,
+      "watchers_count": 92,
+      "pushed_at": "2026-08-12T08:20:33Z"
+    },
+    {
+      "id": 121292770,
+      "full_name": "baruckis/Kriptofolio",
+      "stargazers_count": 89,
+      "forks_count": 28,
+      "watchers_count": 89,
+      "pushed_at": "2026-09-20T04:27:24Z"
+    },
+    {
+      "id": 904007528,
+      "full_name": "Faizan-Khanx/TelegramOSINT",
+      "stargazers_count": 89,
+      "forks_count": 13,
+      "watchers_count": 89,
+      "pushed_at": "2025-10-05T22:22:56Z"
+    },
+    {
+      "id": 670208631,
+      "full_name": "WirelessAlien/BhagavadGitaApp",
+      "stargazers_count": 87,
+      "forks_count": 14,
+      "watchers_count": 87,
+      "pushed_at": "2025-06-25T07:02:41Z"
+    },
+    {
+      "id": 329623478,
+      "full_name": "WayneGongCN/microsoft-todo-browser-ext",
+      "stargazers_count": 86,
+      "forks_count": 5,
+      "watchers_count": 86,
+      "pushed_at": "2023-03-14T21:19:38Z"
+    },
+    {
+      "id": 651117763,
+      "full_name": "AntonioMrtz/SpotifyElectron",
+      "stargazers_count": 86,
+      "forks_count": 53,
+      "watchers_count": 86,
+      "pushed_at": "2026-09-13T08:09:10Z"
+    },
+    {
+      "id": 176320351,
+      "full_name": "jaityron/new-pac-wiki",
+      "stargazers_count": 82,
+      "forks_count": 19,
+      "watchers_count": 82,
+      "pushed_at": "2023-03-19T13:28:43Z"
+    },
+    {
+      "id": 336157818,
+      "full_name": "sanusanth/c-basic-programs",
+      "stargazers_count": 80,
+      "forks_count": 23,
+      "watchers_count": 80,
+      "pushed_at": "2021-07-24T11:30:02Z"
+    },
+    {
+      "id": 577555049,
+      "full_name": "nirajprakash/taru-plants-android",
+      "stargazers_count": 80,
+      "forks_count": 4,
+      "watchers_count": 80,
+      "pushed_at": "2026-08-07T14:40:20Z"
+    },
+    {
+      "id": 1113287441,
+      "full_name": "tetherto/pearpass-app-browser-extension",
+      "stargazers_count": 77,
+      "forks_count": 26,
+      "watchers_count": 77,
+      "pushed_at": "2026-08-14T13:38:16Z"
+    },
+    {
+      "id": 583350986,
+      "full_name": "litrik/displayer",
+      "stargazers_count": 73,
+      "forks_count": 19,
+      "watchers_count": 73,
+      "pushed_at": "2024-01-31T16:30:30Z"
+    },
+    {
+      "id": 633763758,
+      "full_name": "ml-opensource/reality-check",
+      "stargazers_count": 73,
+      "forks_count": 1,
+      "watchers_count": 73,
+      "pushed_at": "2024-03-19T13:42:54Z"
+    },
+    {
+      "id": 749121560,
+      "full_name": "kakajuro/tidytube",
+      "stargazers_count": 73,
+      "forks_count": 4,
+      "watchers_count": 73,
+      "pushed_at": "2025-07-24T13:39:03Z"
+    },
+    {
+      "id": 180479171,
+      "full_name": "pranayairan/CoinBit",
+      "stargazers_count": 71,
+      "forks_count": 33,
+      "watchers_count": 71,
+      "pushed_at": "2021-01-09T21:53:18Z"
+    },
+    {
+      "id": 846253182,
+      "full_name": "yassineAbou/LLMS",
+      "stargazers_count": 71,
+      "forks_count": 7,
+      "watchers_count": 71,
+      "pushed_at": "2026-08-21T20:57:35Z"
+    },
+    {
+      "id": 1170490388,
+      "full_name": "kirill-markin/flashcards-open-source-app",
+      "stargazers_count": 69,
+      "forks_count": 14,
+      "watchers_count": 69,
+      "pushed_at": "2026-09-21T20:16:32Z"
+    },
+    {
+      "id": 268399923,
+      "full_name": "rpandey1234/Covid19Tracker",
+      "stargazers_count": 67,
+      "forks_count": 23,
+      "watchers_count": 67,
+      "pushed_at": "2020-11-11T07:54:42Z"
+    },
+    {
+      "id": 56949659,
+      "full_name": "MemeMaker/Meme-Maker-iOS",
+      "stargazers_count": 66,
+      "forks_count": 21,
+      "watchers_count": 66,
+      "pushed_at": "2017-06-28T09:32:37Z"
+    },
+    {
+      "id": 419804384,
+      "full_name": "nphausg/android.embeddedserver",
+      "stargazers_count": 64,
+      "forks_count": 12,
+      "watchers_count": 64,
+      "pushed_at": "2025-07-12T12:34:28Z"
+    },
+    {
+      "id": 362397072,
+      "full_name": "NhaPhatHanh/github",
+      "stargazers_count": 62,
+      "forks_count": 20,
+      "watchers_count": 62,
+      "pushed_at": "2024-07-26T12:32:20Z"
+    },
+    {
+      "id": 1249357615,
+      "full_name": "AirLyrics/AirLyrics",
+      "stargazers_count": 60,
+      "forks_count": 7,
+      "watchers_count": 60,
+      "pushed_at": "2026-09-22T04:51:44Z"
+    },
+    {
+      "id": 362614272,
+      "full_name": "zlwaterfield/refined-zapier",
+      "stargazers_count": 59,
+      "forks_count": 7,
+      "watchers_count": 59,
+      "pushed_at": "2021-05-11T16:09:21Z"
+    },
+    {
+      "id": 429461202,
+      "full_name": "passbolt/mobile-passbolt-android",
+      "stargazers_count": 58,
+      "forks_count": 20,
+      "watchers_count": 58,
+      "pushed_at": "2026-09-21T16:24:48Z"
+    },
+    {
+      "id": 517287360,
+      "full_name": "Correia-jpv/fucking-open-source-ios-apps",
+      "stargazers_count": 58,
+      "forks_count": 3,
+      "watchers_count": 58,
+      "pushed_at": "2026-09-20T09:25:43Z"
+    },
+    {
+      "id": 203536506,
+      "full_name": "Chen-Dixi/ColorKit",
+      "stargazers_count": 57,
+      "forks_count": 11,
+      "watchers_count": 57,
+      "pushed_at": "2020-03-03T04:56:02Z"
+    },
+    {
+      "id": 645289112,
+      "full_name": "iammohdzaki/BundleToolUI-Desktop",
+      "stargazers_count": 57,
+      "forks_count": 16,
+      "watchers_count": 57,
+      "pushed_at": "2025-12-20T06:55:50Z"
+    },
+    {
+      "id": 1254592375,
+      "full_name": "DoktainerApp/doktainer",
+      "stargazers_count": 56,
+      "forks_count": 9,
+      "watchers_count": 56,
+      "pushed_at": "2026-09-20T15:03:10Z"
+    },
+    {
+      "id": 34382766,
+      "full_name": "hummatli/AppCrossPromoter",
+      "stargazers_count": 55,
+      "forks_count": 17,
+      "watchers_count": 55,
+      "pushed_at": "2020-04-20T18:50:44Z"
+    },
+    {
+      "id": 770826038,
+      "full_name": "kasware-wallet/extension",
+      "stargazers_count": 52,
+      "forks_count": 21,
+      "watchers_count": 52,
+      "pushed_at": "2026-07-23T09:27:56Z"
+    },
+    {
+      "id": 230237439,
+      "full_name": "Tc2r1/Dev_Interview_Prep_App",
+      "stargazers_count": 51,
+      "forks_count": 54,
+      "watchers_count": 51,
+      "pushed_at": "2023-10-05T00:54:57Z"
+    }
+  ]
+}
