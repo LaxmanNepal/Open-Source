@@ -90,6 +90,8 @@ jobs:
           import json,datetime,re
           p='/tmp/catalog-repositories.json'
           data=json.load(open(p))
+          # Keep only repositories with a GitHub-recognized SPDX license.
+          data=[r for r in data if (r.get('license') or {}).get('spdx_id') and str((r.get('license') or {}).get('spdx_id')).upper() not in ('NOASSERTION','OTHER')]
 
           def hay(r):
               parts=[r.get('name',''),r.get('description',''),r.get('homepage',''),r.get('language','')]
