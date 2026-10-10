@@ -14,6 +14,8 @@ A responsive open-source discovery web app for [GitHub](https://github.com/) rep
 - Most watched
 - Most appreciated / starred
 - Search, sorting, platform filters and grid/list views
+- License-aware listings: only repositories with a GitHub-recognized SPDX license are shown
+- Save favorites and compare repositories (up to four)
 - Automatic year grouping from each repository's `created_at` date
 - Local browser caching when GitHub's API rate limit is reached
 - GitHub Actions catalog refresh every 6 hours
@@ -28,4 +30,4 @@ The browser can query GitHub's public repository API directly. The scheduled wor
 
 ## Important limitation
 
-"All open-source projects on GitHub" is not a finite list that a browser can download. GitHub's search API is used to continuously discover relevant public repositories. The catalog can be expanded with more queries/topics over time.
+"All open-source projects on GitHub" is not a finite list that a browser can download. GitHub's search API is used to continuously discover relevant public repositories. The directory excludes repositories without a recognized SPDX license, but GitHub metadata is not a legal audit; check the license file before using or redistributing a project. The catalog can be expanded with more queries/topics over time.
