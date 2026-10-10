@@ -6,6 +6,7 @@ A responsive open-source discovery web app for [GitHub](https://github.com/) rep
 
 - Premium desktop + mobile UI
 - Hero search and quick discovery tags
+- Dedicated platform directories: `/android/`, `/web/`, `/ios/`, `/windows/`, `/linux/` and `/macos/`
 - Platform dividers: Android, macOS, Windows, Linux and Cross-platform
 - Categories: AI & Machine Learning, Video Editing, Developer Tools, Productivity, Design, Security, Media & Music and Utilities
 - Live GitHub repository discovery
