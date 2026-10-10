@@ -48,3 +48,21 @@ body.light{background:#f6f8fc;color:#172033}
 body.light .topbar,body.light .hero-search,body.light .stats-strip,body.light .signal-card,body.light .repo-card,body.light .view-actions select,body.light .filter-chip{background:#fff;border-color:#e3e9f2}
 @media(max-width:900px){.directory-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding-top:48px}}
 @media(max-width:600px){.topbar{height:64px;margin:0 10px;padding:0 13px;border-radius:0 0 16px 16px}.hero{padding:42px 15px 30px;min-height:0}.hero h1{font-size:43px}.section{padding:36px 15px}.section-head h2{font-size:25px}.signal-grid,.directory-grid{grid-template-columns:1fr}.stats-strip{margin:0 12px 4px;padding:14px;border-radius:16px}.view-actions{width:100%}.view-actions select{flex:1;min-width:0}.repo-card{min-height:220px}.repo-identity{gap:10px}.app-icon{width:48px;height:48px;flex-basis:48px}}
+
+
+/* Optional dark storefront theme */
+body.dark{--bg:#0c1220;--panel:#141d2e;--panel2:#1a2740;--text:#edf2fb;--muted:#9aa8bf;--line:#27344a;--accent:#8ca9ff;--accent2:#45d7b1;background:#0c1220;color:#edf2fb}
+body.dark:before{background:linear-gradient(180deg,#111d35 0,rgba(12,18,32,0) 360px)}
+body.dark .topbar,body.dark .stats-strip,body.dark .signal-card,body.dark .repo-card{background:#121b2b;border-color:#27344a;color:#edf2fb}
+body.dark .brand>span:last-child span,body.dark .section-head h2 span,body.dark .repo-name{color:#9bb3ff}
+body.dark .brand-mark,body.dark .footer-brand .brand-mark{background:#1e2e4d;border-color:#30466e;color:#9bb3ff}
+body.dark h1{color:#edf2fb}body.dark .hero-copy>p,body.dark .repo-desc{color:#a5b2c8}
+body.dark .hero-search,body.dark .view-actions select,body.dark .icon-btn,body.dark .github-btn,body.dark .refresh,body.dark .view-btn,body.dark .clear-filter,body.dark .filter-chip,body.dark .platform-shortcuts a,body.dark .repo-actions button{background:#141f31;border-color:#2a3951;color:#c0cce0}
+body.dark .hero-search input{color:#edf2fb}body.dark .hero-search kbd,body.dark .repo-tag,body.dark .repo-actions button.active{background:#1d2b46;color:#a9bdff;border-color:#34496d}
+body.dark .stats-strip strong,body.dark .signal-title b,body.dark .mini-item b,body.dark .repo-meta b{color:#e3ebfa}
+body.dark .signal-title,body.dark .mini-item,body.dark .repo-meta{border-color:#263248}
+body.dark .repo-owner,body.dark .mini-item span,body.dark .active-filter,body.dark footer{color:#91a0b8}
+body.dark .app-icon{background:#202d42;border-color:#2b3b55}
+body.dark .filter-chip.active,body.dark .view-btn.active,body.dark .load-more{background:#3868e8;border-color:#3868e8;color:#fff}
+body.dark .nav{color:#a5b2c8}body.dark .nav a:hover{color:#fff}
+body.dark .light{color:inherit}
